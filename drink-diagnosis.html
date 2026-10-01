@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-Y1E1E2FNE5"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-Y1E1E2FNE5");
+    </script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="さけまっちは、甘さや苦味、飲むシーンから好みに近い一杯を見つけるお酒診断です。"
+    />
+    <meta name="theme-color" content="#f6f3eb" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="512x512"
+      href="sakematch-favicon.png?v=20261002"
+    />
+    <link rel="apple-touch-icon" href="sakematch-favicon.png?v=20261002" />
+    <link rel="stylesheet" href="drink-diagnosis.css" />
+    <title>さけまっち — conte0745</title>
+    <script src="drink-diagnosis.js" defer></script>
+  </head>
+  <body>
+    <dialog
+      class="age-gate"
+      id="age-gate"
+      open
+      aria-labelledby="age-gate-title"
+      aria-modal="true"
+    >
+      <div class="age-card">
+        <span class="age-label">AGE CHECK / 20+</span>
+        <div id="age-confirm-content">
+          <h1 id="age-gate-title">
+            あなたは<br /><span>20歳以上</span>ですか？
+          </h1>
+          <p class="age-description">
+            このページはお酒に関する診断コンテンツです。20歳未満の方はご利用いただけません。年齢確認は自己申告です。
+          </p>
+          <div class="age-actions">
+            <button class="age-yes" id="age-yes" type="button" autofocus>
+              20歳以上です <span aria-hidden="true">→</span>
+            </button>
+            <button class="age-no" id="age-no" type="button">
+              20歳未満です
+            </button>
+          </div>
+        </div>
+        <div id="age-denied-content" hidden aria-live="polite">
+          <h1 id="age-denied-title">
+            このページは<br /><span>利用できません。</span>
+          </h1>
+          <p class="age-description">
+            20歳未満の飲酒は法律で禁止されています。診断ページには進めません。
+          </p>
+          <a class="age-home" href="index.html"
+            >トップページへ戻る <span aria-hidden="true">↗</span></a
+          >
+        </div>
+      </div>
+    </dialog>
+
+    <nav class="site-nav page" aria-label="ページナビゲーション" inert>
+      <a class="logo" href="index.html">CONTE0745</a>
+      <a class="back-link" href="index.html"
+        ><span aria-hidden="true">←</span>TOP PAGE</a
+      >
+    </nav>
+
+    <main class="page" inert>
+      <header class="intro">
+        <div class="intro-copy">
+          <span class="eyebrow"
+            ><span class="eyebrow-dot" aria-hidden="true"></span> YOUR DRINK
+            DIAGNOSIS</span
+          >
+          <h1>さけ<br /><span>まっち</span></h1>
+          <p>
+            甘さ、香り、飲むシーン。6つの質問から、今の好みに近い一杯を見つけます。
+          </p>
+        </div>
+        <div class="intro-mark" aria-hidden="true">
+          <span class="mark-number">06</span>
+          <span class="mark-label">QUESTIONS</span>
+          <span class="mark-line"></span>
+          <span class="mark-small">YOUR TASTE,<br />YOUR PACE.</span>
+        </div>
+      </header>
+
+      <section
+        class="quiz-panel"
+        id="quiz-panel"
+        aria-labelledby="question-title"
+      >
+        <div class="quiz-topline">
+          <progress
+            class="progress-track"
+            id="progress-fill"
+            aria-label="診断の進行状況"
+            max="6"
+            value="1"
+          ></progress>
+          <span class="progress-text" id="progress-text" aria-live="polite"
+            >01 / 06</span
+          >
+        </div>
+        <form id="quiz-form">
+          <fieldset class="question-fieldset">
+            <legend class="question-title" id="question-title"></legend>
+            <p class="question-hint" id="question-hint"></p>
+            <div class="answer-options" id="answer-options"></div>
+          </fieldset>
+          <div class="quiz-actions">
+            <button
+              class="previous-button"
+              id="previous-button"
+              type="button"
+              disabled
+            >
+              <span aria-hidden="true">←</span> 戻る
+            </button>
+            <button class="next-button" id="next-button" type="button" disabled>
+              次へ <span aria-hidden="true">→</span>
+            </button>
+          </div>
+        </form>
+      </section>
+
+      <section
+        class="result-panel"
+        id="result-panel"
+        aria-labelledby="result-heading"
+        hidden
+      >
+        <div class="result-kicker" id="result-heading">
+          <span>YOUR MATCH</span><span id="result-rank"></span>
+        </div>
+        <div class="result-main">
+          <div class="result-copy">
+            <span class="result-type" id="result-type"></span>
+            <h2 id="result-name">診断結果</h2>
+            <p class="result-description" id="result-description"></p>
+            <p class="result-note" id="result-note"></p>
+            <aside class="trivia-box" aria-label="お酒の豆知識">
+              <span class="trivia-label">DRINK NOTE</span>
+              <p id="result-trivia"></p>
+              <a
+                id="result-trivia-source"
+                href="#"
+                aria-label="豆知識の出典"
+                target="_blank"
+                rel="noopener noreferrer"
+              ></a>
+            </aside>
+          </div>
+          <div class="result-seal" aria-hidden="true">
+            <span>GOOD<br />MATCH</span><b>!</b>
+          </div>
+        </div>
+        <div class="alternatives">
+          <h3>こちらも好みに近いかも</h3>
+          <ol id="other-results"></ol>
+        </div>
+        <div class="result-actions">
+          <a
+            class="share-link"
+            id="share-link"
+            href="https://x.com/intent/tweet"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span aria-hidden="true">↗</span>
+            Xで結果をシェア </a
+          ><button class="restart-button" id="restart-button" type="button">
+            <span aria-hidden="true">↻</span> もう一度診断
+          </button>
+        </div>
+      </section>
+
+      <aside class="notice" aria-label="飲酒に関する注意と公式情報">
+        <span class="notice-mark" aria-hidden="true">!</span>
+        <div>
+          <p>
+            この診断は味の好みをもとに一般的な情報を提案するもので、飲酒量や飲酒を勧めるものではありません。年齢確認は自己申告で、本人確認を行うものではありません。20歳未満の飲酒は禁止されています。飲酒運転は絶対にやめましょう。
+          </p>
+          <div class="notice-links">
+            <a
+              href="https://www.nta.go.jp/taxes/sake/hyoji/miseinen/hyouji.htm"
+              target="_blank"
+              rel="noopener noreferrer"
+              >国税庁 20歳未満飲酒防止の表示基準 ↗</a
+            >
+            <a
+              href="https://www.mhlw.go.jp/stf/newpage_38541.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              >厚生労働省 健康に配慮した飲酒ガイドライン ↗</a
+            >
+          </div>
+        </div>
+      </aside>
+    </main>
+
+    <footer class="page site-footer" inert>
+      <span>© 2026 CONTE0745</span>
+      <a href="index.html">ホームへ戻る ↑</a>
+    </footer>
+  </body>
+</html>

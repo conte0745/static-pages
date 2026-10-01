@@ -1,159 +1,846 @@
 <!doctype html>
 <html lang="ja">
-<head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y1E1E2FNE5"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-Y1E1E2FNE5');
-  </script>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="conte0745のマイページ。サブスク管理アプリ「サブベア」や予定調整アプリ「YOTEI」、YouTubeチャンネル「インシデントラボ」を紹介します。">
-  <link rel="icon" type="image/png" sizes="512x512" href="favicon.png">
-  <link rel="apple-touch-icon" href="favicon.png">
-  <title>conte0745 — My Page</title>
-  <style>
-    :root{--bg:#f6f3eb;--ink:#1b1b19;--sub:#706e67;--line:#d8d3c7;--red:#ff5b3d;--yellow:#ffd95a;--blue:#a7c8ff;--white:#fffdf8;--orange:#ff5b3d}
-    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:Arial,"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif}a{color:inherit;text-decoration:none}.page{width:min(1120px,calc(100% - 40px));margin:auto}
-    nav{height:78px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}.logo{font-size:17px;font-weight:900;letter-spacing:-.04em}.logo i{color:var(--red);font-style:normal}.links{display:flex;gap:22px;font-size:10px;font-weight:800;letter-spacing:.14em}.links a:hover{color:var(--red)}
-    .intro{display:grid;grid-template-columns:1.35fr .65fr;gap:45px;padding:76px 0 55px}.hello{display:inline-flex;align-items:center;gap:9px;font-size:11px;font-weight:800;letter-spacing:.12em}.hello::before{content:"";width:9px;height:9px;background:var(--red);border-radius:50%}h1{margin:28px 0 25px;font-size:clamp(52px,8vw,98px);line-height:.92;letter-spacing:-.075em}h1 span{display:block;color:var(--red)}.intro-copy{max-width:520px;margin:0;font-size:15px;line-height:1.9;font-weight:600}.profile-card{align-self:end;padding:26px;background:var(--ink);color:white;border-radius:24px;transform:rotate(2deg)}.profile-head{display:flex;align-items:center;gap:14px;margin-bottom:24px}.profile-icon{display:block;flex:0 0 auto;width:86px;aspect-ratio:1;object-fit:cover;border:3px solid var(--yellow);border-radius:50%}.profile-card small{font-size:9px;letter-spacing:.16em;color:#aaa}.profile-card h2{margin:8px 0 12px;font-size:24px}.profile-card p{margin:0;color:#bbb;font-size:12px;line-height:1.7}.profile-tech{display:flex;gap:7px;flex-wrap:wrap}.profile-tech span{padding:7px 10px;border-radius:99px;font-size:10px;font-weight:900;line-height:1}.badge-java{background:#f89820;color:#1b1b19}.badge-spring{background:#6db33f;color:#14210c}.badge-aws{background:#232f3e;color:#ff9900;border:1px solid #ff9900}.badge-python{background:#ffd343;color:#1f4b73}.scroll-note{padding:0 0 35px;font-size:9px;font-weight:800;letter-spacing:.18em}
-    .cards{display:grid;grid-template-columns:1.2fr .8fr;gap:20px;padding-bottom:100px}.card{position:relative;overflow:hidden;border:1px solid var(--line);border-radius:26px;background:var(--white)}.card-content{padding:34px}.kind{font-size:9px;font-weight:900;letter-spacing:.18em}.card h2{margin:18px 0 12px;font-size:clamp(34px,5vw,64px);line-height:.95;letter-spacing:-.06em}.card p{max-width:470px;margin:0;color:var(--sub);font-size:13px;line-height:1.85}.button{display:inline-flex;align-items:center;gap:16px;margin-top:24px;padding:13px 20px;background:var(--ink);color:white;border-radius:99px;font-size:11px;font-weight:800;letter-spacing:.06em;transition:background .15s}.button:hover{background:var(--red)}.button-sub{background:var(--white);color:var(--ink);border:1px solid var(--ink);margin-left:8px}.button-sub:hover{background:var(--ink);color:white}
-    .subbear-card{grid-column:1 / -1;display:grid;grid-template-columns:1.2fr 0.8fr;align-items:center;background:var(--white);border:2px solid var(--ink);box-shadow:10px 10px 0 var(--ink)}.subbear-card .card-content{padding:42px}.subbear-heading{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin:18px 0 12px}.subbear-card .subbear-heading h2{margin:0;font-size:clamp(36px,5vw,56px)}.subbear-shot-wrap{padding:30px;display:flex;justify-content:center;align-items:center}.subbear-shot{display:block;width:95%;max-width:440px;border:2px solid var(--ink);border-radius:18px;box-shadow:12px 12px 0 var(--ink);transform:rotate(1.5deg);transition:transform .2s}.subbear-shot:hover{transform:rotate(0deg)}
-    .youtube-card{background:var(--red);border-color:var(--red)}.youtube-card .card-content,.yotei-card .card-content{position:relative;z-index:2;padding-bottom:20px}.youtube-card p{color:#442018}.video-window{position:relative;display:block;width:80%;margin:0 auto -35px;aspect-ratio:16/9;background:var(--ink);border:2px solid var(--ink);border-radius:16px;box-shadow:14px 14px 0 var(--ink);overflow:hidden;transform:rotate(-2deg)}.video-window img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .2s}.video-window::after{content:"▶";position:absolute;inset:50% auto auto 50%;display:grid;place-items:center;width:54px;aspect-ratio:1;background:var(--ink);color:white;border-radius:50%;font-size:17px;transform:translate(-50%,-50%)}.video-window:hover img{transform:scale(1.04)}
-    .yotei-card{min-height:650px;background:var(--yellow);border-color:var(--yellow)}.project-heading{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin:18px 0 12px}.card .project-heading h2{margin:0}.card .project-note{margin-top:10px;color:var(--ink);font-size:11px;font-weight:800}.tech-stack{display:flex;gap:9px;flex-wrap:wrap}.tech-stack span{padding:8px 12px;border-radius:99px;font-size:11px;font-weight:900;line-height:1;letter-spacing:.03em;box-shadow:0 2px 0 rgba(27,27,25,.22)}.badge-next{background:#111;color:#fff}.badge-react{background:#17313b;color:#61dafb;border:1px solid #61dafb}.badge-cloudflare{background:#f48120;color:#1b1b19}.badge-gcp{background:#4285f4;color:#1b1b19}.badge-clerk{background:#6c47ff;color:#fff}.badge-tailwind{background:#0284c7;color:#fff}.feature-list{display:grid;gap:7px;margin:18px 0 0;padding:0;list-style:none}.feature-list li{display:flex;align-items:center;gap:8px;font-size:11px;font-weight:800}.feature-list li::before{content:"✓";display:grid;place-items:center;width:17px;aspect-ratio:1;background:var(--ink);color:var(--yellow);border-radius:50%;font-size:9px}.subbear-list li::before{background:var(--orange);color:white}
-    .yotei-shot{display:block;width:78%;margin:0 auto -35px;border:2px solid var(--ink);border-radius:16px;box-shadow:12px 12px 0 var(--ink);transform:rotate(2deg)}
-    footer{padding:32px 0 24px;border-top:1px solid var(--line)}.footer-top{display:flex;justify-content:space-between;align-items:center;gap:20px}.footer-top p{margin:0;font-size:24px;font-weight:900;letter-spacing:-.04em}.socials{display:flex;justify-content:flex-end;gap:8px;flex-wrap:wrap}.socials a{padding:9px 12px;border:1px solid var(--ink);border-radius:99px;font-size:11px;font-weight:900;letter-spacing:.07em}.socials a:hover{background:var(--ink);color:white}.copyright{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-top:28px;color:var(--sub);font-size:8px;letter-spacing:.15em}.footer-meta{display:flex;align-items:center;gap:18px}.footer-meta a{text-decoration:underline;text-underline-offset:3px}.footer-meta a:hover{color:var(--ink)}
-    @media(max-width:760px){.page{width:calc(100% - 26px)}nav{height:68px}.links a:nth-child(-n+3){display:none}.intro{grid-template-columns:1fr;padding-top:60px}.profile-card{width:78%;margin-left:auto}.cards{grid-template-columns:1fr}.subbear-card{grid-template-columns:1fr}.subbear-shot-wrap{padding:0 24px 30px}.video-window{width:86%;margin-bottom:-10px}.yotei-card{min-height:650px}.footer-top{display:block}.socials{justify-content:flex-start;margin-top:18px}.copyright{gap:20px}}
-  </style>
-</head>
-<body>
-  <nav class="page" aria-label="ページ内ナビゲーション">
-    <a class="logo" href="#top">CONTE0745</a>
-    <div class="links">
-      <a href="#subbear">SUBBEAR</a>
-      <a href="#yotei">YOTEI</a>
-      <a href="#youtube">YOUTUBE</a>
-      <a href="#links">LINKS</a>
-    </div>
-  </nav>
-
-  <header class="intro page" id="top">
-    <div>
-      <span class="hello">HELLO, THIS IS MY PAGE</span>
-      <h1>つくったり、<span>発信したり。</span></h1>
-      <p class="intro-copy">conte0745のマイページです。サブスク管理アプリ「サブベア」や予定調整アプリ「YOTEI」、YouTubeチャンネル「インシデントラボ」を運営しています。</p>
-    </div>
-    <aside class="profile-card">
-      <div class="profile-head">
-        <img class="profile-icon" src="profile-icon.webp" alt="conte0745のカエルのアイコン">
-        <div class="profile-tech" aria-label="使用技術">
-          <span class="badge-java">Java</span>
-          <span class="badge-spring">Spring Boot</span>
-          <span class="badge-aws">AWS</span>
-          <span class="badge-python">Python</span>
-        </div>
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-Y1E1E2FNE5"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-Y1E1E2FNE5");
+    </script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="conte0745のマイページ。サブスク管理アプリ「サブベア」や予定調整アプリ「YOTEI」、YouTubeチャンネル「インシデントラボ」を紹介します。"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="512x512"
+      href="profile-favicon.png?v=20261002"
+    />
+    <link rel="apple-touch-icon" href="profile-favicon.png?v=20261002" />
+    <title>conte0745 — My Page</title>
+    <style>
+      :root {
+        --bg: #f6f3eb;
+        --ink: #1b1b19;
+        --sub: #706e67;
+        --line: #d8d3c7;
+        --red: #ff5b3d;
+        --yellow: #ffd95a;
+        --blue: #a7c8ff;
+        --white: #fffdf8;
+        --orange: #ff5b3d;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family:
+          Arial, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      .page {
+        width: min(1120px, calc(100% - 40px));
+        margin: auto;
+      }
+      nav {
+        height: 78px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid var(--line);
+      }
+      .logo {
+        font-size: 17px;
+        font-weight: 900;
+        letter-spacing: -0.04em;
+      }
+      .logo i {
+        color: var(--red);
+        font-style: normal;
+      }
+      .links {
+        display: flex;
+        gap: 22px;
+        font-size: 10px;
+        font-weight: 800;
+        letter-spacing: 0.14em;
+      }
+      .links a:hover {
+        color: var(--red);
+      }
+      .intro {
+        display: grid;
+        grid-template-columns: 1.35fr 0.65fr;
+        gap: 45px;
+        padding: 76px 0 55px;
+      }
+      .hello {
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 0.12em;
+      }
+      .hello::before {
+        content: "";
+        width: 9px;
+        height: 9px;
+        background: var(--red);
+        border-radius: 50%;
+      }
+      h1 {
+        margin: 28px 0 25px;
+        font-size: clamp(52px, 8vw, 98px);
+        line-height: 0.92;
+        letter-spacing: -0.075em;
+      }
+      h1 span {
+        display: block;
+        color: var(--red);
+      }
+      .intro-copy {
+        max-width: 520px;
+        margin: 0;
+        font-size: 15px;
+        line-height: 1.9;
+        font-weight: 600;
+      }
+      .profile-card {
+        align-self: end;
+        padding: 26px;
+        background: var(--ink);
+        color: white;
+        border-radius: 24px;
+        transform: rotate(2deg);
+      }
+      .profile-head {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        margin-bottom: 24px;
+      }
+      .profile-icon {
+        display: block;
+        flex: 0 0 auto;
+        width: 86px;
+        aspect-ratio: 1;
+        object-fit: cover;
+        border: 3px solid var(--yellow);
+        border-radius: 50%;
+      }
+      .profile-card small {
+        font-size: 9px;
+        letter-spacing: 0.16em;
+        color: #aaa;
+      }
+      .profile-card h2 {
+        margin: 8px 0 12px;
+        font-size: 24px;
+      }
+      .profile-card p {
+        margin: 0;
+        color: #bbb;
+        font-size: 12px;
+        line-height: 1.7;
+      }
+      .profile-tech {
+        display: flex;
+        gap: 7px;
+        flex-wrap: wrap;
+      }
+      .profile-tech span {
+        padding: 7px 10px;
+        border-radius: 99px;
+        font-size: 10px;
+        font-weight: 900;
+        line-height: 1;
+      }
+      .badge-java {
+        background: #f89820;
+        color: #1b1b19;
+      }
+      .badge-spring {
+        background: #6db33f;
+        color: #14210c;
+      }
+      .badge-aws {
+        background: #232f3e;
+        color: #ff9900;
+        border: 1px solid #ff9900;
+      }
+      .badge-python {
+        background: #ffd343;
+        color: #1f4b73;
+      }
+      .badge-html {
+        background: #bf360c;
+        color: #fff;
+      }
+      .badge-css {
+        background: #1572b6;
+        color: #fff;
+      }
+      .badge-javascript {
+        background: #f7df1e;
+        color: #1b1b19;
+      }
+      .scroll-note {
+        padding: 0 0 35px;
+        font-size: 9px;
+        font-weight: 800;
+        letter-spacing: 0.18em;
+      }
+      .cards {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 20px;
+        padding-bottom: 100px;
+      }
+      .card {
+        position: relative;
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: 26px;
+        background: var(--white);
+      }
+      .card-content {
+        padding: 34px;
+      }
+      .kind {
+        font-size: 9px;
+        font-weight: 900;
+        letter-spacing: 0.18em;
+      }
+      .card h2 {
+        margin: 18px 0 12px;
+        font-size: clamp(34px, 5vw, 64px);
+        line-height: 0.95;
+        letter-spacing: -0.06em;
+      }
+      .card p {
+        max-width: 470px;
+        margin: 0;
+        color: var(--sub);
+        font-size: 13px;
+        line-height: 1.85;
+      }
+      .button {
+        display: inline-flex;
+        align-items: center;
+        gap: 16px;
+        margin-top: 24px;
+        padding: 13px 20px;
+        background: var(--ink);
+        color: white;
+        border-radius: 99px;
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 0.06em;
+        transition: background 0.15s;
+      }
+      .button:hover {
+        background: var(--red);
+      }
+      .button-sub {
+        background: var(--white);
+        color: var(--ink);
+        border: 1px solid var(--ink);
+        margin-left: 8px;
+      }
+      .button-sub:hover {
+        background: var(--ink);
+        color: white;
+      }
+      .subbear-card {
+        grid-column: 1 / -1;
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        align-items: center;
+        background: var(--white);
+        border: 2px solid var(--ink);
+        box-shadow: 10px 10px 0 var(--ink);
+      }
+      .subbear-card .card-content {
+        padding: 42px;
+      }
+      .subbear-heading {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        flex-wrap: wrap;
+        margin: 18px 0 12px;
+      }
+      .subbear-card .subbear-heading h2 {
+        margin: 0;
+        font-size: clamp(36px, 5vw, 56px);
+      }
+      .subbear-shot-wrap {
+        padding: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .subbear-shot {
+        display: block;
+        width: 95%;
+        max-width: 440px;
+        border: 2px solid var(--ink);
+        border-radius: 18px;
+        box-shadow: 12px 12px 0 var(--ink);
+        transform: rotate(1.5deg);
+        transition: transform 0.2s;
+      }
+      .subbear-shot:hover {
+        transform: rotate(0deg);
+      }
+      .youtube-card {
+        background: var(--red);
+        border-color: var(--red);
+      }
+      .youtube-card .card-content,
+      .yotei-card .card-content {
+        position: relative;
+        z-index: 2;
+        padding-bottom: 20px;
+      }
+      .youtube-card p {
+        color: #442018;
+      }
+      .video-window {
+        position: relative;
+        display: block;
+        width: 80%;
+        margin: 0 auto -35px;
+        aspect-ratio: 16/9;
+        background: var(--ink);
+        border: 2px solid var(--ink);
+        border-radius: 16px;
+        box-shadow: 14px 14px 0 var(--ink);
+        overflow: hidden;
+        transform: rotate(-2deg);
+      }
+      .video-window img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.2s;
+      }
+      .video-window::after {
+        content: "▶";
+        position: absolute;
+        inset: 50% auto auto 50%;
+        display: grid;
+        place-items: center;
+        width: 54px;
+        aspect-ratio: 1;
+        background: var(--ink);
+        color: white;
+        border-radius: 50%;
+        font-size: 17px;
+        transform: translate(-50%, -50%);
+      }
+      .video-window:hover img {
+        transform: scale(1.04);
+      }
+      .yotei-card {
+        min-height: 650px;
+        background: var(--yellow);
+        border-color: var(--yellow);
+      }
+      .project-heading {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        flex-wrap: wrap;
+        margin: 18px 0 12px;
+      }
+      .card .project-heading h2 {
+        margin: 0;
+      }
+      .card .project-note {
+        margin-top: 10px;
+        color: var(--ink);
+        font-size: 11px;
+        font-weight: 800;
+      }
+      .tech-stack {
+        display: flex;
+        gap: 9px;
+        flex-wrap: wrap;
+      }
+      .tech-stack span {
+        padding: 8px 12px;
+        border-radius: 99px;
+        font-size: 11px;
+        font-weight: 900;
+        line-height: 1;
+        letter-spacing: 0.03em;
+        box-shadow: 0 2px 0 rgba(27, 27, 25, 0.22);
+      }
+      .badge-next {
+        background: #111;
+        color: #fff;
+      }
+      .badge-react {
+        background: #17313b;
+        color: #61dafb;
+        border: 1px solid #61dafb;
+      }
+      .badge-cloudflare {
+        background: #f48120;
+        color: #1b1b19;
+      }
+      .badge-gcp {
+        background: #4285f4;
+        color: #1b1b19;
+      }
+      .badge-clerk {
+        background: #6c47ff;
+        color: #fff;
+      }
+      .badge-tailwind {
+        background: #0284c7;
+        color: #fff;
+      }
+      .feature-list {
+        display: grid;
+        gap: 7px;
+        margin: 18px 0 0;
+        padding: 0;
+        list-style: none;
+      }
+      .feature-list li {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 11px;
+        font-weight: 800;
+      }
+      .feature-list li::before {
+        content: "✓";
+        display: grid;
+        place-items: center;
+        width: 17px;
+        aspect-ratio: 1;
+        background: var(--ink);
+        color: var(--yellow);
+        border-radius: 50%;
+        font-size: 9px;
+      }
+      .subbear-list li::before {
+        background: var(--orange);
+        color: white;
+      }
+      .yotei-shot {
+        display: block;
+        width: 78%;
+        margin: 0 auto -35px;
+        border: 2px solid var(--ink);
+        border-radius: 16px;
+        box-shadow: 12px 12px 0 var(--ink);
+        transform: rotate(2deg);
+      }
+      .diagnosis-card {
+        grid-column: 1/-1;
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        align-items: center;
+        gap: 32px;
+        padding: 36px 40px;
+        background: var(--blue);
+        border: 2px solid var(--ink);
+        box-shadow: 10px 10px 0 var(--ink);
+      }
+      .diagnosis-art {
+        display: block;
+        width: min(100%, 220px);
+        height: auto;
+        aspect-ratio: 1;
+        object-fit: cover;
+        border-radius: 50%;
+        justify-self: center;
+      }
+      .diagnosis-card h2 {
+        margin: 15px 0 10px;
+        font-size: clamp(40px, 6vw, 64px);
+        line-height: 0.95;
+        letter-spacing: -0.06em;
+      }
+      .diagnosis-card p {
+        max-width: 510px;
+        color: var(--ink);
+      }
+      .diagnosis-card .button {
+        white-space: nowrap;
+      }
+      footer {
+        padding: 32px 0 24px;
+        border-top: 1px solid var(--line);
+      }
+      .footer-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+      }
+      .footer-top p {
+        margin: 0;
+        font-size: 24px;
+        font-weight: 900;
+        letter-spacing: -0.04em;
+      }
+      .socials {
+        display: flex;
+        justify-content: flex-end;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+      .socials a {
+        padding: 9px 12px;
+        border: 1px solid var(--ink);
+        border-radius: 99px;
+        font-size: 11px;
+        font-weight: 900;
+        letter-spacing: 0.07em;
+      }
+      .socials a:hover {
+        background: var(--ink);
+        color: white;
+      }
+      .copyright {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+        margin-top: 28px;
+        color: var(--sub);
+        font-size: 8px;
+        letter-spacing: 0.15em;
+      }
+      .footer-meta {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+      }
+      .footer-meta a {
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
+      .footer-meta a:hover {
+        color: var(--ink);
+      }
+      @media (max-width: 760px) {
+        .page {
+          width: calc(100% - 26px);
+        }
+        nav {
+          height: 68px;
+        }
+        .links a:nth-child(-n + 3) {
+          display: none;
+        }
+        .intro {
+          grid-template-columns: 1fr;
+          padding-top: 60px;
+        }
+        .profile-card {
+          width: 78%;
+          margin-left: auto;
+        }
+        .cards {
+          grid-template-columns: 1fr;
+        }
+        .subbear-card {
+          grid-template-columns: 1fr;
+        }
+        .subbear-shot-wrap {
+          padding: 0 24px 30px;
+        }
+        .video-window {
+          width: 86%;
+          margin-bottom: -10px;
+        }
+        .yotei-card {
+          min-height: 650px;
+        }
+        .diagnosis-card {
+          grid-template-columns: 1fr;
+          gap: 18px;
+          padding: 26px;
+        }
+        .diagnosis-art {
+          width: min(100%, 180px);
+        }
+        .footer-top {
+          display: block;
+        }
+        .socials {
+          justify-content: flex-start;
+          margin-top: 18px;
+        }
+        .copyright {
+          gap: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="page" aria-label="ページ内ナビゲーション">
+      <a class="logo" href="#top">CONTE0745</a>
+      <div class="links">
+        <a href="#subbear">SUBBEAR</a>
+        <a href="#yotei">YOTEI</a>
+        <a href="#youtube">YOUTUBE</a>
+        <a href="drink-diagnosis.html">SAKEMATCH</a>
+        <a href="#links">LINKS</a>
       </div>
-      <small>PROFILE</small><h2>conte0745</h2>
-      <p>普段は会社員。仕事のかたわら、Webアプリをつくったり、障害事例を動画で紹介したりしています。</p>
-    </aside>
-  </header>
-  <div class="scroll-note page">↓ SCROLL TO EXPLORE</div>
+    </nav>
 
-  <main class="cards page">
-    <!-- SUBBEAR CARD -->
-    <section class="card subbear-card" id="subbear">
-      <div class="card-content">
-        <span class="kind" style="color:var(--orange);">01 / NEW APP</span>
-        <div class="subbear-heading">
-          <h2>サブベア</h2>
-          <div class="tech-stack" aria-label="使用技術">
-            <span class="badge-next">Next.js</span>
-            <span class="badge-react">React</span>
-            <span class="badge-clerk">Clerk</span>
-            <span class="badge-tailwind">Tailwind</span>
+    <header class="intro page" id="top">
+      <div>
+        <span class="hello">HELLO, THIS IS MY PAGE</span>
+        <h1>つくったり、<span>発信したり。</span></h1>
+        <p class="intro-copy">
+          conte0745のマイページです。サブスク管理アプリ「サブベア」や予定調整アプリ「YOTEI」、YouTubeチャンネル「インシデントラボ」を運営しています。
+        </p>
+      </div>
+      <aside class="profile-card">
+        <div class="profile-head">
+          <img
+            class="profile-icon"
+            src="profile-icon.webp"
+            alt="conte0745のカエルのアイコン"
+          />
+          <div class="profile-tech" aria-label="使用技術">
+            <span class="badge-java">Java</span>
+            <span class="badge-spring">Spring Boot</span>
+            <span class="badge-aws">AWS</span>
+            <span class="badge-python">Python</span>
           </div>
         </div>
-        <p>毎月の固定費と支払日をまとめて管理できる、個人向けサブスクリプション管理アプリです。</p>
-        <p class="project-note" style="color:var(--orange);">固定費を、ひと目で。払いっぱなしを、そろそろ終わりに。</p>
-        <ul class="feature-list subbear-list">
-          <li>月払い・年払いの総額を月額換算で可視化</li>
-          <li>更新日カウントダウンで支払い前に見直し</li>
-          <li>クレジットカード連携不要で安心・安全</li>
-        </ul>
-        <div style="margin-top:24px;display:flex;gap:10px;flex-wrap:wrap;">
-          <a class="button" href="subbear.html">紹介を見る <span>→</span></a>
-          <a class="button button-sub" href="https://subbare.shiftonton.net/lp" target="_blank" rel="noopener noreferrer">公式LP <span>↗</span></a>
+        <small>PROFILE</small>
+        <h2>conte0745</h2>
+        <p>
+          普段は会社員。仕事のかたわら、Webアプリをつくったり、障害事例を動画で紹介したりしています。
+        </p>
+      </aside>
+    </header>
+    <div class="scroll-note page">↓ SCROLL TO EXPLORE</div>
+
+    <main class="cards page">
+      <!-- SUBBEAR CARD -->
+      <section class="card subbear-card" id="subbear">
+        <div class="card-content">
+          <span class="kind" style="color: var(--orange)">01 / NEW APP</span>
+          <div class="subbear-heading">
+            <h2>サブベア</h2>
+            <div class="tech-stack" aria-label="使用技術">
+              <span class="badge-next">Next.js</span>
+              <span class="badge-react">React</span>
+              <span class="badge-clerk">Clerk</span>
+              <span class="badge-tailwind">Tailwind</span>
+            </div>
+          </div>
+          <p>
+            毎月の固定費と支払日をまとめて管理できる、個人向けサブスクリプション管理アプリです。
+          </p>
+          <p class="project-note" style="color: var(--orange)">
+            固定費を、ひと目で。払いっぱなしを、そろそろ終わりに。
+          </p>
+          <ul class="feature-list subbear-list">
+            <li>月払い・年払いの総額を月額換算で可視化</li>
+            <li>更新日カウントダウンで支払い前に見直し</li>
+            <li>クレジットカード連携不要で安心・安全</li>
+          </ul>
+          <div
+            style="margin-top: 24px; display: flex; gap: 10px; flex-wrap: wrap"
+          >
+            <a class="button" href="subbear.html">紹介を見る <span>→</span></a>
+            <a
+              class="button button-sub"
+              href="https://subbare.shiftonton.net/lp"
+              target="_blank"
+              rel="noopener noreferrer"
+              >公式LP <span>↗</span></a
+            >
+          </div>
         </div>
-      </div>
-      <div class="subbear-shot-wrap">
-        <a href="subbear.html" aria-label="サブベアの紹介ページを見る">
-          <img class="subbear-shot" src="subbear-thumbnail.png" alt="無駄なサブスク、削ぎ落とす。サブベア">
+        <div class="subbear-shot-wrap">
+          <a href="subbear.html" aria-label="サブベアの紹介ページを見る">
+            <img
+              class="subbear-shot"
+              src="subbear-thumbnail.png"
+              alt="無駄なサブスク、削ぎ落とす。サブベア"
+            />
+          </a>
+        </div>
+      </section>
+
+      <!-- YOTEI CARD -->
+      <section class="card yotei-card" id="yotei">
+        <div class="card-content">
+          <span class="kind">02 / MY APP</span>
+          <div class="project-heading">
+            <h2>YOTEI</h2>
+            <div class="tech-stack" aria-label="使用技術">
+              <span class="badge-next">Next.js</span>
+              <span class="badge-react">React</span>
+              <span class="badge-cloudflare">Cloudflare</span>
+              <span class="badge-gcp">GCP</span>
+            </div>
+          </div>
+          <p>
+            日程を決める・出欠を取る・お店を決める・アンケートを取るなど様々な場面で活躍できる予定調整アプリです。
+          </p>
+          <p class="project-note">
+            予定調整をもっと手軽にしたくて開発しました。
+          </p>
+          <ul class="feature-list">
+            <li>ログイン不要で使える</li>
+            <li>リンクでかんたんに共有</li>
+            <li>Discord/Slackと連携できる</li>
+          </ul>
+          <a
+            class="button"
+            href="https://yotei.shiftonton.net/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >YOTEIを見る <span>↗</span></a
+          >
+        </div>
+        <img
+          class="yotei-shot"
+          src="yotei-screen.jpg"
+          alt="YOTEIの実際のトップ画面"
+        />
+      </section>
+
+      <section class="card diagnosis-card">
+        <div>
+          <span class="kind">03 / MY APP</span>
+          <h2>さけまっち</h2>
+          <div class="tech-stack diagnosis-tech" aria-label="使用技術">
+            <span class="badge-html">HTML</span>
+            <span class="badge-css">CSS</span>
+            <span class="badge-javascript">JavaScript</span>
+          </div>
+          <br />
+          <p>6つの質問から、あなたに合うお酒を診断します。</p>
+          <a class="button" href="drink-diagnosis.html"
+            >診断をはじめる <span>→</span></a
+          >
+        </div>
+        <img
+          class="diagnosis-art"
+          src="sakematch-favicon.png"
+          alt="ビールとワインを描いたさけまっちのアイコン"
+          width="512"
+          height="512"
+          loading="lazy"
+        />
+      </section>
+
+      <!-- INCIDENT LAB CARD -->
+      <section class="card youtube-card" id="youtube">
+        <div class="card-content">
+          <span class="kind">04 / INCIDENT LAB</span>
+          <h2>インシデント<br />ラボ</h2>
+          <p>大規模障害事例を、YouTube動画でわかりやすく紹介しています。</p>
+          <a
+            class="button"
+            href="https://www.youtube.com/@%E3%82%A4%E3%83%B3%E3%82%B7%E3%83%87%E3%83%B3%E3%83%88%E3%83%A9%E3%83%9C"
+            target="_blank"
+            rel="noopener noreferrer"
+            >チャンネルを見る <span>↗</span></a
+          >
+        </div>
+        <a
+          class="video-window"
+          href="https://youtube.com/shorts/i91rauPJrXE"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Cloudflare障害を60秒解説のShortsを見る"
+        >
+          <img
+            src="youtube-thumbnail.png"
+            alt="Cloudflare障害を60秒解説の動画サムネイル"
+            loading="lazy"
+          />
         </a>
-      </div>
-    </section>
+      </section>
+    </main>
 
-    <!-- YOTEI CARD -->
-    <section class="card yotei-card" id="yotei">
-      <div class="card-content">
-        <span class="kind">02 / MY APP</span>
-        <div class="project-heading">
-          <h2>YOTEI</h2>
-          <div class="tech-stack" aria-label="使用技術">
-            <span class="badge-next">Next.js</span>
-            <span class="badge-react">React</span>
-            <span class="badge-cloudflare">Cloudflare</span>
-            <span class="badge-gcp">GCP</span>
-          </div>
+    <footer class="page" id="links">
+      <div class="footer-top">
+        <p>ほかにも、いろいろ。</p>
+        <div class="socials">
+          <a href="subbear.html">SUBBEAR ↗</a>
+          <a
+            href="https://shiftonton.net/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >YOTEI ↗</a
+          >
+          <a
+            href="https://www.youtube.com/@%E3%82%A4%E3%83%B3%E3%82%B7%E3%83%87%E3%83%B3%E3%83%88%E3%83%A9%E3%83%9C"
+            target="_blank"
+            rel="noopener noreferrer"
+            >YOUTUBE ↗</a
+          >
+          <a
+            href="https://x.com/cal301983"
+            target="_blank"
+            rel="noopener noreferrer"
+            >X / TWITTER ↗</a
+          >
+          <a
+            href="https://qiita.com/conte0745"
+            target="_blank"
+            rel="noopener noreferrer"
+            >QIITA ↗</a
+          >
+          <a
+            href="https://zenn.dev/conte0745"
+            target="_blank"
+            rel="noopener noreferrer"
+            >ZENN ↗</a
+          >
+          <a
+            href="https://github.com/conte0745"
+            target="_blank"
+            rel="noopener noreferrer"
+            >GITHUB ↗</a
+          >
         </div>
-        <p>日程を決める・出欠を取る・お店を決める・アンケートを取るなど様々な場面で活躍できる予定調整アプリです。</p>
-        <p class="project-note">予定調整をもっと手軽にしたくて開発しました。</p>
-        <ul class="feature-list">
-          <li>ログイン不要で使える</li>
-          <li>リンクでかんたんに共有</li>
-          <li>Discord/Slackと連携できる</li>
-        </ul>
-        <a class="button" href="https://yotei.shiftonton.net/" target="_blank" rel="noopener noreferrer">YOTEIを見る <span>↗</span></a>
       </div>
-      <img class="yotei-shot" src="yotei-screen.jpg" alt="YOTEIの実際のトップ画面">
-    </section>
-
-    <!-- INCIDENT LAB CARD -->
-    <section class="card youtube-card" id="youtube">
-      <div class="card-content">
-        <span class="kind">03 / INCIDENT LAB</span>
-        <h2>インシデント<br>ラボ</h2>
-        <p>大規模障害事例を、YouTube動画でわかりやすく紹介しています。</p>
-        <a class="button" href="https://www.youtube.com/@%E3%82%A4%E3%83%B3%E3%82%B7%E3%83%87%E3%83%B3%E3%83%88%E3%83%A9%E3%83%9C" target="_blank" rel="noopener noreferrer">チャンネルを見る <span>↗</span></a>
+      <div class="copyright">
+        <div class="footer-meta">
+          <span>© 2026 CONTE0745</span>
+          <a href="privacy.html">プライバシーポリシー</a>
+        </div>
+        <a href="#top">BACK TO TOP ↑</a>
       </div>
-      <a class="video-window" href="https://youtube.com/shorts/i91rauPJrXE" target="_blank" rel="noopener noreferrer" aria-label="Cloudflare障害を60秒解説のShortsを見る">
-        <img src="youtube-thumbnail.png" alt="Cloudflare障害を60秒解説の動画サムネイル" loading="lazy">
-      </a>
-    </section>
-  </main>
-
-  <footer class="page" id="links">
-    <div class="footer-top">
-      <p>ほかにも、いろいろ。</p>
-      <div class="socials">
-        <a href="subbear.html">SUBBEAR ↗</a>
-        <a href="https://shiftonton.net/" target="_blank" rel="noopener noreferrer">YOTEI ↗</a>
-        <a href="https://www.youtube.com/@%E3%82%A4%E3%83%B3%E3%82%B7%E3%83%87%E3%83%B3%E3%83%88%E3%83%A9%E3%83%9C" target="_blank" rel="noopener noreferrer">YOUTUBE ↗</a>
-        <a href="https://x.com/cal301983" target="_blank" rel="noopener noreferrer">X / TWITTER ↗</a>
-        <a href="https://qiita.com/conte0745" target="_blank" rel="noopener noreferrer">QIITA ↗</a>
-        <a href="https://zenn.dev/conte0745" target="_blank" rel="noopener noreferrer">ZENN ↗</a>
-        <a href="https://github.com/conte0745" target="_blank" rel="noopener noreferrer">GITHUB ↗</a>
-      </div>
-    </div>
-    <div class="copyright">
-      <div class="footer-meta">
-        <span>© 2026 CONTE0745</span>
-        <a href="privacy.html">プライバシーポリシー</a>
-      </div>
-      <a href="#top">BACK TO TOP ↑</a>
-    </div>
-  </footer>
-</body>
+    </footer>
+  </body>
 </html>
