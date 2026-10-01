@@ -107,7 +107,8 @@ const elements = {
   resultTrivia: document.querySelector("#result-trivia"),
   resultTriviaSource: document.querySelector("#result-trivia-source"),
   otherResults: document.querySelector("#other-results"),
-  share: document.querySelector("#share-link")
+  share: document.querySelector("#share-link"),
+  threadsShare: document.querySelector("#threads-share-link")
 };
 
 function renderQuestion() {
@@ -257,6 +258,9 @@ function renderRankedResults(matches, selectedIndex = 0) {
 
 ${pageUrl}`;
   elements.share.href = `https://x.com/intent/tweet?text=${encodeURIComponent(shareText)}`;
+  // Threads はトピックタグが1投稿1つまでのため、タグを絞る
+  const threadsText = shareText.replace("#一杯診断 #お酒診断", "#一杯診断");
+  elements.threadsShare.href = `https://www.threads.net/intent/post?text=${encodeURIComponent(threadsText)}`;
 }
 
 function showResults() {
