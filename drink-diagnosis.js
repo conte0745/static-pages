@@ -249,11 +249,11 @@ function renderRankedResults(matches, selectedIndex = 0) {
   });
 
   const pageUrl = window.location.href.split("#")[0];
-  const shareText = `さけまっちの診断結果は「${selected.name}」でした。あなたに合う一杯を診断してみよう。
+  const shareText = `一杯診断の結果は「${selected.name}」でした。あなたに合う一杯を診断してみよう。
 
 豆知識：${trivia.text}
 
-#さけまっち #お酒診断
+#一杯診断 #お酒診断
 
 ${pageUrl}`;
   elements.share.href = `https://x.com/intent/tweet?text=${encodeURIComponent(shareText)}`;

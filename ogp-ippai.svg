@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+    <rect width="1200" height="630" fill="#a7c8ff" />
+    <rect x="28" y="28" width="1144" height="574" rx="22" fill="#fffdf8" stroke="#1b1b19"
+        stroke-width="3" />
+    <rect x="28" y="28" width="18" height="574" rx="9" fill="#ff5b3d" />
+    <text x="94" y="116" fill="#1b1b19" font-family="sans-serif" font-size="20" font-weight="800">03
+        / MY APP</text>
+    <text x="88" y="280" fill="#1b1b19" font-family="sans-serif" font-size="94" font-weight="900">
+        一杯診断</text>
+    <text x="96" y="348" fill="#706e67" font-family="sans-serif" font-size="25">6つの質問から、あなたに合うお酒を診断。</text>
+    <rect x="96" y="410" width="234" height="62" rx="4" fill="#1b1b19" />
+    <text x="126" y="450" fill="#fffdf8" font-family="sans-serif" font-size="21" font-weight="800">
+        好みの一杯を探す</text>
+    <circle cx="892" cy="326" r="202" fill="#ffd95a" stroke="#1b1b19" stroke-width="4" />
+    <defs>
+        <clipPath id="drink-clip">
+            <circle cx="892" cy="326" r="160" />
+        </clipPath>
+    </defs>
+    <image href="ippai-favicon.png" x="732" y="166" width="320" height="320"
+        preserveAspectRatio="xMidYMid slice" clip-path="url(#drink-clip)" />
+    <text x="96" y="552" fill="#706e67" font-family="sans-serif" font-size="16" font-weight="700">
+        profile.shiftonton.net</text>
+</svg>

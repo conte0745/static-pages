@@ -1,9 +1,9 @@
 # conte0745 — Personal Pages
 
-[conte0745](https://github.com/conte0745) のポートフォリオ・紹介サイトのリポジトリです。  
+[conte0745](https://profile.shiftonton.net) のポートフォリオ・紹介サイトのリポジトリです。  
 GitHub Pages を利用してホスティングされています。
 
-🌐 **Webサイト**: [https://conte0745.github.io/pages/](https://conte0745.github.io/pages/)
+🌐 **Webサイト**: https://profile.shiftonton.net
 
 ---
 
@@ -14,8 +14,10 @@ GitHub Pages を利用してホスティングされています。
 | `index.html`                                 | トップページ。自己紹介、プロダクト一覧、各種リンクを掲載            |
 | `subbear.html`                               | サブスク管理アプリ「サブベア（Subbear）」の紹介・詳細ページ         |
 | `privacy.html`                               | プライバシーポリシーページ（Google Analytics 利用に関する規約）     |
-| `drink-diagnosis.html`                       | 20歳以上向けのお酒の好み診断「さけまっち」                          |
-| `drink-diagnosis.css` / `drink-diagnosis.js` | さけまっちのスタイル・診断ロジック                                  |
+| `drink-diagnosis.html`                       | 20歳以上向けのお酒の好み診断「一杯診断」                           |
+| `drink-diagnosis.css` / `drink-diagnosis.js` | 一杯診断のスタイル・診断ロジック                                   |
+| `sitemap.xml` / `robots.txt`                 | 検索エンジン向けのサイトマップとクローラー設定                      |
+| `ogp-*.svg` / `ogp-*.png`                    | SNS共有用のOGP画像（SVGが元データ、PNGを `rsvg-convert` で書き出し） |
 | `.nojekyll`                                  | GitHub Pages で Jekyll によるビルド処理をバイパスするためのファイル |
 | `*.png` / `*.jpg` / `*.webp`                 | サイト・プロダクト・プロフィールの各種画像アセット                  |
 
@@ -44,13 +46,13 @@ GitHub Pages を利用してホスティングされています。
 - **概要**: 過去の大規模なシステム障害やインシデント事例を分かりやすく解説するYouTubeチャンネル。
 - **リンク**: [YouTubeチャンネル](https://www.youtube.com/@%E3%82%A4%E3%83%B3%E3%82%B7%E3%83%87%E3%83%B3%E3%83%88%E3%83%A9%E3%83%9C)
 
-### 4. さけまっち (Sake Match)
+### 4. 一杯診断 (Ippai Shindan)
 - **概要**: 6つの質問から、好みに合うお酒を提案する診断コンテンツ。
 - **特徴**:
   - スライダーで甘さや苦味などの好みを入力
   - 診断結果におすすめと豆知識、参照元を表示
   - 20歳未満向けの入場制限と飲酒に関する注意を掲載
-- **ページ**: [さけまっち](drink-diagnosis.html)
+- **ページ**: [一杯診断](drink-diagnosis.html)
 
 ---
 
