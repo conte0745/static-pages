@@ -1,7 +1,7 @@
 # conte0745 — Personal Pages
 
 [conte0745](https://profile.shiftonton.net) のポートフォリオ・紹介サイトのリポジトリです。  
-GitHub Pages を利用してホスティングされています。
+Cloudflare を利用してホスティングされています。
 
 🌐 **Webサイト**: https://profile.shiftonton.net
 
@@ -19,7 +19,7 @@ GitHub Pages を利用してホスティングされています。
 | `subbear.html` / `drink-diagnosis.html`      | 旧URLから新しいフォルダへ転送するページ                             |
 | `sitemap.xml` / `robots.txt`                 | 検索エンジン向けのサイトマップとクローラー設定                      |
 | `ogp-*.svg` / `ogp-*.png`                    | SNS共有用のOGP画像（SVGが元データ、PNGを `rsvg-convert` で書き出し） |
-| `.nojekyll`                                  | GitHub Pages で Jekyll によるビルド処理をバイパスするためのファイル |
+| `.nojekyll`                                  | GitHub Pages で配信していたときの Jekyll 無効化用ファイル            |
 | `*.png` / `*.jpg` / `*.webp`                 | サイト・プロダクト・プロフィールの各種画像アセット                  |
 
 ---
@@ -69,7 +69,7 @@ GitHub Pages を利用してホスティングされています。
 ## 🛠 技術仕様
 
 - **フロントエンド**: HTML5, CSS3, Vanilla JavaScript（外部ライブラリ非依存）
-- **ホスティング**: GitHub Pages
+- **ホスティング**: Cloudflare
 - **アクセス解析**: Google Analytics (gtag.js)
 - **フォント / アイコン**: システムフォント (Hiragino Kaku Gothic, Yu Gothic, Arial など)
 
