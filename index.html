@@ -18,7 +18,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="conte0745のマイページ。サブスク管理アプリ「サブベア」や予定調整アプリ「YOTEI」、YouTubeチャンネル「インシデントラボ」を紹介します。"
+      content="conte0745のマイページ。サブスク管理アプリ「サブベア」や予定調整アプリ「YOTEI」、API検証のChrome拡張機能「EviREST」、YouTubeチャンネル「インシデントラボ」を紹介します。"
     />
     <link rel="canonical" href="https://profile.shiftonton.net/" />
     <meta property="og:type" content="website" />
@@ -26,7 +26,7 @@
     <meta property="og:locale" content="ja_JP" />
     <meta property="og:url" content="https://profile.shiftonton.net/" />
     <meta property="og:title" content="conte0745 — My Page" />
-    <meta property="og:description" content="conte0745のマイページ。サブスク管理アプリ「サブベア」や予定調整アプリ「YOTEI」、YouTubeチャンネル「インシデントラボ」を紹介します。" />
+    <meta property="og:description" content="conte0745のマイページ。サブスク管理アプリ「サブベア」や予定調整アプリ「YOTEI」、API検証のChrome拡張機能「EviREST」、YouTubeチャンネル「インシデントラボ」を紹介します。" />
     <meta property="og:image" content="https://profile.shiftonton.net/ogp-profile.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -215,6 +215,10 @@
       .badge-javascript {
         background: #f7df1e;
         color: #1b1b19;
+      }
+      .badge-chrome {
+        background: #1a73e8;
+        color: #fff;
       }
       .scroll-note {
         padding: 0 0 35px;
@@ -506,6 +510,13 @@
       .diagnosis-card .button {
         white-space: nowrap;
       }
+      .evirest-card {
+        background: #5eead4;
+      }
+      .evirest-card .diagnosis-art {
+        width: min(100%, 128px);
+        border-radius: 0;
+      }
       footer {
         padding: 32px 0 24px;
         border-top: 1px solid var(--line);
@@ -569,7 +580,7 @@
         nav {
           height: 68px;
         }
-        .links a:nth-child(-n + 3) {
+        .links a:nth-child(-n + 4) {
           display: none;
         }
         .intro {
@@ -624,7 +635,8 @@
         <a href="#subbear">SUBBEAR</a>
         <a href="#yotei">YOTEI</a>
         <a href="#youtube">YOUTUBE</a>
-        <a href="drink-diagnosis.html">SAKEMATCH</a>
+        <a href="#evirest">EVIREST</a>
+        <a href="drink-diagnosis/index.html">SAKEMATCH</a>
         <a href="#links">LINKS</a>
       </div>
     </nav>
@@ -634,7 +646,7 @@
         <span class="hello">HELLO, THIS IS MY PAGE</span>
         <h1>つくったり、<span>発信したり。</span></h1>
         <p class="intro-copy">
-          conte0745のマイページです。サブスク管理アプリ「サブベア」や予定調整アプリ「YOTEI」、YouTubeチャンネル「インシデントラボ」を運営しています。
+          conte0745のマイページです。サブスク管理アプリ「サブベア」や予定調整アプリ「YOTEI」、API検証のChrome拡張機能「EviREST」、YouTubeチャンネル「インシデントラボ」を運営しています。
         </p>
       </div>
       <aside class="profile-card">
@@ -688,7 +700,7 @@
           <div
             style="margin-top: 24px; display: flex; gap: 10px; flex-wrap: wrap"
           >
-            <a class="button" href="subbear.html">紹介を見る <span>→</span></a>
+            <a class="button" href="subbear/index.html">紹介を見る <span>→</span></a>
             <a
               class="button button-sub"
               href="https://subbare.shiftonton.net/lp"
@@ -699,10 +711,10 @@
           </div>
         </div>
         <div class="subbear-shot-wrap">
-          <a href="subbear.html" aria-label="サブベアの紹介ページを見る">
+          <a href="subbear/index.html" aria-label="サブベアの紹介ページを見る">
             <img
               class="subbear-shot"
-              src="subbear-thumbnail.png"
+              src="subbear/subbear-thumbnail.png"
               alt="無駄なサブスク、削ぎ落とす。サブベア"
             />
           </a>
@@ -743,7 +755,7 @@
         </div>
         <img
           class="yotei-shot"
-          src="yotei-screen.jpg"
+          src="yotei/yotei-screen.jpg"
           alt="YOTEIの実際のトップ画面"
         />
       </section>
@@ -759,13 +771,13 @@
           </div>
           <br />
           <p>6つの質問から、あなたに合うお酒を診断します。</p>
-          <a class="button" href="drink-diagnosis.html"
+          <a class="button" href="drink-diagnosis/index.html"
             >診断をはじめる <span>→</span></a
           >
         </div>
         <img
           class="diagnosis-art"
-          src="ippai-favicon.png"
+          src="drink-diagnosis/ippai-favicon.png"
           alt="ビールとワインを描いた一杯診断のアイコン"
           width="512"
           height="512"
@@ -795,11 +807,47 @@
           aria-label="Cloudflare障害を60秒解説のShortsを見る"
         >
           <img
-            src="youtube-thumbnail.png"
+            src="incident-lab/youtube-thumbnail.png"
             alt="Cloudflare障害を60秒解説の動画サムネイル"
             loading="lazy"
           />
         </a>
+      </section>
+
+      <!-- EVIREST CARD -->
+      <section class="card diagnosis-card evirest-card" id="evirest">
+        <div>
+          <span class="kind">05 / CHROME EXTENSION</span>
+          <h2>EviREST</h2>
+          <div class="tech-stack" aria-label="使用技術">
+            <span class="badge-javascript">JavaScript</span>
+            <span class="badge-chrome">Chrome拡張</span>
+          </div>
+          <br />
+          <p>
+            HTTP/REST APIの送信・検証と、テストエビデンスの出力ができるChrome拡張機能です。
+          </p>
+          <ul class="feature-list">
+            <li>アサーション結果からOK / NGを自動判定</li>
+            <li>エビデンスをHTML・Excelで出力</li>
+            <li>アカウント登録なし、データはブラウザ内だけ</li>
+          </ul>
+          <a
+            class="button"
+            href="https://chromewebstore.google.com/detail/evirest-api-tester/edocmaemplpnhjpfnoenibkoopfndgaa"
+            target="_blank"
+            rel="noopener noreferrer"
+            >ストアで見る <span>↗</span></a
+          >
+        </div>
+        <img
+          class="diagnosis-art"
+          src="evirest/evirest-icon.png"
+          alt="波括弧とチェックマークを描いたEviRESTのアイコン"
+          width="128"
+          height="128"
+          loading="lazy"
+        />
       </section>
     </main>
 
@@ -807,7 +855,7 @@
       <div class="footer-top">
         <p>ほかにも、いろいろ。</p>
         <div class="socials">
-          <a href="subbear.html">SUBBEAR ↗</a>
+          <a href="subbear/index.html">SUBBEAR ↗</a>
           <a
             href="https://shiftonton.net/"
             target="_blank"
@@ -819,6 +867,12 @@
             target="_blank"
             rel="noopener noreferrer"
             >YOUTUBE ↗</a
+          >
+          <a
+            href="https://chromewebstore.google.com/detail/evirest-api-tester/edocmaemplpnhjpfnoenibkoopfndgaa"
+            target="_blank"
+            rel="noopener noreferrer"
+            >EVIREST ↗</a
           >
           <a
             href="https://x.com/cal301983"

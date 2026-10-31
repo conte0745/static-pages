@@ -12,10 +12,11 @@ GitHub Pages を利用してホスティングされています。
 | ファイル / ディレクトリ                      | 説明                                                                |
 | :------------------------------------------- | :------------------------------------------------------------------ |
 | `index.html`                                 | トップページ。自己紹介、プロダクト一覧、各種リンクを掲載            |
-| `subbear.html`                               | サブスク管理アプリ「サブベア（Subbear）」の紹介・詳細ページ         |
+| `subbear/`                                   | サブスク管理アプリ「サブベア（Subbear）」の紹介ページと画像         |
 | `privacy.html`                               | プライバシーポリシーページ（Google Analytics 利用に関する規約）     |
-| `drink-diagnosis.html`                       | 20歳以上向けのお酒の好み診断「一杯診断」                           |
-| `drink-diagnosis.css` / `drink-diagnosis.js` | 一杯診断のスタイル・診断ロジック                                   |
+| `drink-diagnosis/`                           | 20歳以上向けのお酒の好み診断「一杯診断」のページ・CSS・JS・画像     |
+| `yotei/` / `evirest/` / `incident-lab/`      | トップページに載せる各プロダクトの画像                              |
+| `subbear.html` / `drink-diagnosis.html`      | 旧URLから新しいフォルダへ転送するページ                             |
 | `sitemap.xml` / `robots.txt`                 | 検索エンジン向けのサイトマップとクローラー設定                      |
 | `ogp-*.svg` / `ogp-*.png`                    | SNS共有用のOGP画像（SVGが元データ、PNGを `rsvg-convert` で書き出し） |
 | `.nojekyll`                                  | GitHub Pages で Jekyll によるビルド処理をバイパスするためのファイル |
@@ -32,7 +33,7 @@ GitHub Pages を利用してホスティングされています。
   - 更新日カウントダウンで支払い前に見直し
   - クレジットカード連携不要で安心・安全
 - **技術スタック**: Next.js, React, Clerk, Tailwind CSS
-- **ページ**: [subbear.html](subbear.html) / [公式LP](https://subbare.shiftonton.net/lp)
+- **ページ**: [subbear/](subbear/index.html) / [公式LP](https://subbare.shiftonton.net/lp)
 
 ### 2. YOTEI
 - **概要**: 候補日程を選んでURLを送るだけのシンプルな日程調整アプリ。
@@ -52,7 +53,16 @@ GitHub Pages を利用してホスティングされています。
   - スライダーで甘さや苦味などの好みを入力
   - 診断結果におすすめと豆知識、参照元を表示
   - 20歳未満向けの入場制限と飲酒に関する注意を掲載
-- **ページ**: [一杯診断](drink-diagnosis.html)
+- **ページ**: [一杯診断](drink-diagnosis/index.html)
+
+### 5. EviREST
+- **概要**: HTTP/REST APIの送信・検証と、テストエビデンスの出力ができるChrome拡張機能。
+- **特徴**:
+  - アサーション結果からOK / NGを自動判定
+  - エビデンスをHTML・Excelで出力
+  - アカウント登録なし、データはブラウザ内だけ
+- **技術スタック**: JavaScript, Chrome拡張機能 (Manifest V3)
+- **リンク**: [Chrome ウェブストア](https://chromewebstore.google.com/detail/evirest-api-tester/edocmaemplpnhjpfnoenibkoopfndgaa) / [GitHub](https://github.com/conte0745/evirest)
 
 ---
 
