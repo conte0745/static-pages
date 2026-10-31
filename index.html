@@ -18,7 +18,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="conte0745のマイページ。サブスク管理アプリ「サブベア」や予定調整アプリ「YOTEI」、API検証のChrome拡張機能「EviREST」、YouTubeチャンネル「インシデントラボ」を紹介します。"
+      content="conte0745のマイページ。サブスク管理アプリ「サブベア」や予定調整アプリ「YOTEI」、API検証のChrome拡張機能「EviREST」、ドット絵の島をつくる「ピクニワ」、YouTubeチャンネル「インシデントラボ」を紹介します。"
     />
     <link rel="canonical" href="https://profile.shiftonton.net/" />
     <meta property="og:type" content="website" />
@@ -26,7 +26,7 @@
     <meta property="og:locale" content="ja_JP" />
     <meta property="og:url" content="https://profile.shiftonton.net/" />
     <meta property="og:title" content="conte0745 — My Page" />
-    <meta property="og:description" content="conte0745のマイページ。サブスク管理アプリ「サブベア」や予定調整アプリ「YOTEI」、API検証のChrome拡張機能「EviREST」、YouTubeチャンネル「インシデントラボ」を紹介します。" />
+    <meta property="og:description" content="conte0745のマイページ。サブスク管理アプリ「サブベア」や予定調整アプリ「YOTEI」、API検証のChrome拡張機能「EviREST」、ドット絵の島をつくる「ピクニワ」、YouTubeチャンネル「インシデントラボ」を紹介します。" />
     <meta property="og:image" content="https://profile.shiftonton.net/ogp-profile.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -218,6 +218,10 @@
       }
       .badge-chrome {
         background: #1a73e8;
+        color: #fff;
+      }
+      .badge-svelte {
+        background: #ff3e00;
         color: #fff;
       }
       .scroll-note {
@@ -517,6 +521,12 @@
         width: min(100%, 128px);
         border-radius: 0;
       }
+      .pikniwa-card {
+        background: #bfe8a8;
+      }
+      .card.pikniwa-card p {
+        color: var(--ink);
+      }
       footer {
         padding: 32px 0 24px;
         border-top: 1px solid var(--line);
@@ -532,6 +542,7 @@
         font-size: 24px;
         font-weight: 900;
         letter-spacing: -0.04em;
+        white-space: nowrap;
       }
       .socials {
         display: flex;
@@ -580,7 +591,7 @@
         nav {
           height: 68px;
         }
-        .links a:nth-child(-n + 4) {
+        .links a:nth-child(-n + 5) {
           display: none;
         }
         .intro {
@@ -636,6 +647,7 @@
         <a href="#yotei">YOTEI</a>
         <a href="#youtube">YOUTUBE</a>
         <a href="#evirest">EVIREST</a>
+        <a href="#pikniwa">PIKNIWA</a>
         <a href="drink-diagnosis/index.html">SAKEMATCH</a>
         <a href="#links">LINKS</a>
       </div>
@@ -646,7 +658,7 @@
         <span class="hello">HELLO, THIS IS MY PAGE</span>
         <h1>つくったり、<span>発信したり。</span></h1>
         <p class="intro-copy">
-          conte0745のマイページです。サブスク管理アプリ「サブベア」や予定調整アプリ「YOTEI」、API検証のChrome拡張機能「EviREST」、YouTubeチャンネル「インシデントラボ」を運営しています。
+          conte0745のマイページです。サブスク管理アプリ「サブベア」や予定調整アプリ「YOTEI」、API検証のChrome拡張機能「EviREST」、ドット絵の島をつくる「ピクニワ」、YouTubeチャンネル「インシデントラボ」を運営しています。
         </p>
       </div>
       <aside class="profile-card">
@@ -849,6 +861,52 @@
           loading="lazy"
         />
       </section>
+
+      <!-- PIKNIWA CARD -->
+      <section class="card subbear-card pikniwa-card" id="pikniwa">
+        <div class="card-content">
+          <span class="kind">06 / MY APP</span>
+          <div class="subbear-heading">
+            <h2>ピクニワ</h2>
+            <div class="tech-stack" aria-label="使用技術">
+              <span class="badge-svelte">SvelteKit</span>
+              <span class="badge-cloudflare">Cloudflare</span>
+              <span class="badge-clerk">Clerk</span>
+            </div>
+          </div>
+          <p>
+            好きなことや、つくったものからドット絵の島を作り、ひとこと日記で育てるサービスです。
+          </p>
+          <p class="project-note">小さな島に、その人らしさを。</p>
+          <ul class="feature-list">
+            <li>ログインなしでも始められる</li>
+            <li>ひとこと日記で島を育てる</li>
+            <li>日記は公開・非公開を選べる</li>
+          </ul>
+          <a
+            class="button"
+            href="https://pikniwa.shiftonton.net/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >ピクニワを見る <span>↗</span></a
+          >
+        </div>
+        <div class="subbear-shot-wrap">
+          <a
+            href="https://pikniwa.shiftonton.net/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="ピクニワを見る"
+          >
+            <img
+              class="subbear-shot"
+              src="pikniwa/pikniwa-ogp.png"
+              alt="緑と小さな家のあるドット絵の島と、ピクニワの名前"
+              loading="lazy"
+            />
+          </a>
+        </div>
+      </section>
     </main>
 
     <footer class="page" id="links">
@@ -873,6 +931,12 @@
             target="_blank"
             rel="noopener noreferrer"
             >EVIREST ↗</a
+          >
+          <a
+            href="https://pikniwa.shiftonton.net/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >PIKNIWA ↗</a
           >
           <a
             href="https://x.com/cal301983"

@@ -15,7 +15,7 @@ Cloudflare を利用してホスティングされています。
 | `subbear/`                                   | サブスク管理アプリ「サブベア（Subbear）」の紹介ページと画像         |
 | `privacy.html`                               | プライバシーポリシーページ（Google Analytics 利用に関する規約）     |
 | `drink-diagnosis/`                           | 20歳以上向けのお酒の好み診断「一杯診断」のページ・CSS・JS・画像     |
-| `yotei/` / `evirest/` / `incident-lab/`      | トップページに載せる各プロダクトの画像                              |
+| `yotei/` / `evirest/` / `pikniwa/` / `incident-lab/` | トップページに載せる各プロダクトの画像                       |
 | `subbear.html` / `drink-diagnosis.html`      | 旧URLから新しいフォルダへ転送するページ                             |
 | `sitemap.xml` / `robots.txt`                 | 検索エンジン向けのサイトマップとクローラー設定                      |
 | `ogp-*.svg` / `ogp-*.png`                    | SNS共有用のOGP画像（SVGが元データ、PNGを `rsvg-convert` で書き出し） |
@@ -63,6 +63,15 @@ Cloudflare を利用してホスティングされています。
   - アカウント登録なし、データはブラウザ内だけ
 - **技術スタック**: JavaScript, Chrome拡張機能 (Manifest V3)
 - **リンク**: [Chrome ウェブストア](https://chromewebstore.google.com/detail/evirest-api-tester/edocmaemplpnhjpfnoenibkoopfndgaa) / [GitHub](https://github.com/conte0745/evirest)
+
+### 6. ピクニワ (PIKNIWA)
+- **概要**: 好きなことや、つくったものからドット絵の島を作り、ひとこと日記で育てるサービス。
+- **特徴**:
+  - ログインなしでも始められる
+  - ひとこと日記で島を育てる
+  - 日記は公開・非公開を選べる
+- **技術スタック**: SvelteKit, Cloudflare Workers, Clerk
+- **リンク**: [ピクニワ](https://pikniwa.shiftonton.net/)
 
 ---
 
