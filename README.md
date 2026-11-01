@@ -18,7 +18,7 @@ Cloudflare を利用してホスティングされています。
 | `yotei/` / `pikniwa/`                        | YOTEI・ピクニワの紹介ページと画像                                   |
 | `components.js`                              | トップページのWeb Components（`product-card`、`tech-badge`）         |
 | `intro.css`                                  | サブベア・YOTEI・ピクニワの紹介ページ共通のスタイル                 |
-| `evirest/` / `captgrab/` / `incident-lab/`   | トップページに載せる各プロダクトの画像                              |
+| `evirest/` / `captgrab/` / `incident-lab/` / `tiktok/` | トップページに載せる各プロダクトの画像                              |
 | `subbear.html` / `drink-diagnosis.html`      | 旧URLから新しいフォルダへ転送するページ                             |
 | `sitemap.xml` / `robots.txt`                 | 検索エンジン向けのサイトマップとクローラー設定                      |
 | `ogp-*.svg` / `ogp-*.png`                    | SNS共有用のOGP画像（SVGが元データ、PNGを `rsvg-convert` で書き出し） |

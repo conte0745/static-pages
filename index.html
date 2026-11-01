@@ -307,6 +307,9 @@
       }
       .tiktok-card {
         grid-column: 1 / -1;
+        display: grid;
+        grid-template-columns: 0.7fr 1.3fr;
+        align-items: center;
         background: var(--ink);
         border-color: var(--ink);
         color: white;
@@ -321,6 +324,26 @@
       .tiktok-card .button:hover {
         background: var(--red);
         color: white;
+      }
+      .tiktok-thumbs {
+        display: grid;
+        grid-template-columns: repeat(4, 112px);
+        justify-content: end;
+        gap: 12px;
+        padding: 30px 34px 30px 0;
+      }
+      .tiktok-thumbs a {
+        display: block;
+      }
+      .tiktok-thumbs img {
+        display: block;
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        transition: transform 0.2s;
+      }
+      .tiktok-thumbs a:hover img {
+        transform: scale(1.03);
       }
       .video-window {
         position: relative;
@@ -470,8 +493,15 @@
         .cards {
           grid-template-columns: 1fr;
         }
-        .youtube-card {
+        .youtube-card,
+        .tiktok-card {
           grid-template-columns: 1fr;
+        }
+        .tiktok-thumbs {
+          grid-template-columns: repeat(4, minmax(0, 88px));
+          justify-content: start;
+          gap: 8px;
+          padding: 0 34px 34px;
         }
         .video-window {
           width: 86%;
@@ -841,6 +871,64 @@
             rel="noopener noreferrer"
             >TikTokを見る <span>↗</span></a
           >
+        </div>
+        <div class="tiktok-thumbs">
+          <a
+            href="https://www.tiktok.com/@conte0745"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="TikTokで見る"
+          >
+            <img
+              src="tiktok/yotei.jpg"
+              alt="日程調整、チャンネルで完結。YOTEIの動画"
+              width="360"
+              height="640"
+              loading="lazy"
+            />
+          </a>
+          <a
+            href="https://www.tiktok.com/@conte0745"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="TikTokで見る"
+          >
+            <img
+              src="tiktok/subbear.jpg"
+              alt="エンジニアのAI・SaaS課金を集計するサブベアの動画"
+              width="360"
+              height="640"
+              loading="lazy"
+            />
+          </a>
+          <a
+            href="https://www.tiktok.com/@conte0745"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="TikTokで見る"
+          >
+            <img
+              src="tiktok/evirest.jpg"
+              alt="APIテストのエビデンス作りを紹介するEviRESTの動画"
+              width="360"
+              height="640"
+              loading="lazy"
+            />
+          </a>
+          <a
+            href="https://www.tiktok.com/@conte0745"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="TikTokで見る"
+          >
+            <img
+              src="tiktok/captgrab.jpg"
+              alt="アイコンを押すだけで撮影するCaptGrabの動画"
+              width="360"
+              height="640"
+              loading="lazy"
+            />
+          </a>
         </div>
       </section>
     </main>
