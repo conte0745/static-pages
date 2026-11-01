@@ -305,6 +305,23 @@
       .youtube-card p {
         color: #442018;
       }
+      .tiktok-card {
+        grid-column: 1 / -1;
+        background: var(--ink);
+        border-color: var(--ink);
+        color: white;
+      }
+      .tiktok-card p {
+        color: #ccc;
+      }
+      .tiktok-card .button {
+        background: white;
+        color: var(--ink);
+      }
+      .tiktok-card .button:hover {
+        background: var(--red);
+        color: white;
+      }
       .video-window {
         position: relative;
         display: block;
@@ -809,6 +826,22 @@
             loading="lazy"
           />
         </a>
+      </section>
+
+      <!-- TIKTOK CARD -->
+      <section class="card tiktok-card" id="tiktok">
+        <div class="card-content">
+          <span class="kind">TIKTOK</span>
+          <h2>TikTok</h2>
+          <p>つくったアプリの紹介動画を投稿しています。</p>
+          <a
+            class="button"
+            href="https://www.tiktok.com/@conte0745"
+            target="_blank"
+            rel="noopener noreferrer"
+            >TikTokを見る <span>↗</span></a
+          >
+        </div>
       </section>
     </main>
 
