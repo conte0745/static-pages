@@ -15,7 +15,7 @@ Cloudflare を利用してホスティングされています。
 | `subbear/`                                   | サブスク管理アプリ「サブベア（Subbear）」の紹介ページと画像         |
 | `privacy.html`                               | プライバシーポリシーページ（Google Analytics 利用に関する規約）     |
 | `drink-diagnosis/`                           | 20歳以上向けのお酒の好み診断「一杯診断」のページ・CSS・JS・画像     |
-| `yotei/` / `evirest/` / `pikniwa/` / `incident-lab/` | トップページに載せる各プロダクトの画像                       |
+| `yotei/` / `evirest/` / `pikniwa/` / `captgrab/` / `incident-lab/` | トップページに載せる各プロダクトの画像         |
 | `subbear.html` / `drink-diagnosis.html`      | 旧URLから新しいフォルダへ転送するページ                             |
 | `sitemap.xml` / `robots.txt`                 | 検索エンジン向けのサイトマップとクローラー設定                      |
 | `ogp-*.svg` / `ogp-*.png`                    | SNS共有用のOGP画像（SVGが元データ、PNGを `rsvg-convert` で書き出し） |
@@ -72,6 +72,15 @@ Cloudflare を利用してホスティングされています。
   - 日記は公開・非公開を選べる
 - **技術スタック**: SvelteKit, Cloudflare Workers, Clerk
 - **リンク**: [ピクニワ](https://pikniwa.shiftonton.net/)
+
+### 7. CaptGrab
+- **概要**: 画面サイズを固定して、Webページ全体を1枚のPNGにするChrome拡張機能。
+- **特徴**:
+  - 100vhの要素が伸びず、画像の継ぎ目も出ない
+  - 撮影サイズや保存先を設定で変更できる
+  - アカウント登録なし、画像は外部に送信しない
+- **技術スタック**: TypeScript, Chrome拡張機能 (Manifest V3)
+- **リンク**: [Chrome ウェブストア](https://chromewebstore.google.com/detail/lanhcfgmjnbbalhiljdhcleahpineilm) / [紹介ページ](https://captgrab.shiftonton.net/) / [GitHub](https://github.com/conte0745/Capt-Glab)
 
 ---
 

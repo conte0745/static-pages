@@ -18,7 +18,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="conte0745のマイページ。サブスク管理アプリ「サブベア」や予定調整アプリ「YOTEI」、API検証のChrome拡張機能「EviREST」、ドット絵の島をつくる「ピクニワ」、YouTubeチャンネル「インシデントラボ」を紹介します。"
+      content="conte0745のマイページ。サブスク管理アプリ「サブベア」や予定調整アプリ「YOTEI」、API検証のChrome拡張機能「EviREST」、ページ全体を撮影するChrome拡張機能「CaptGrab」、ドット絵の島をつくる「ピクニワ」、YouTubeチャンネル「インシデントラボ」を紹介します。"
     />
     <link rel="canonical" href="https://profile.shiftonton.net/" />
     <meta property="og:type" content="website" />
@@ -26,8 +26,14 @@
     <meta property="og:locale" content="ja_JP" />
     <meta property="og:url" content="https://profile.shiftonton.net/" />
     <meta property="og:title" content="conte0745 — My Page" />
-    <meta property="og:description" content="conte0745のマイページ。サブスク管理アプリ「サブベア」や予定調整アプリ「YOTEI」、API検証のChrome拡張機能「EviREST」、ドット絵の島をつくる「ピクニワ」、YouTubeチャンネル「インシデントラボ」を紹介します。" />
-    <meta property="og:image" content="https://profile.shiftonton.net/ogp-profile.png" />
+    <meta
+      property="og:description"
+      content="conte0745のマイページ。サブスク管理アプリ「サブベア」や予定調整アプリ「YOTEI」、API検証のChrome拡張機能「EviREST」、ページ全体を撮影するChrome拡張機能「CaptGrab」、ドット絵の島をつくる「ピクニワ」、YouTubeチャンネル「インシデントラボ」を紹介します。"
+    />
+    <meta
+      property="og:image"
+      content="https://profile.shiftonton.net/ogp-profile.png"
+    />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content="conte0745のプロフィール" />
@@ -222,6 +228,10 @@
       }
       .badge-svelte {
         background: #ff3e00;
+        color: #fff;
+      }
+      .badge-typescript {
+        background: #3178c6;
         color: #fff;
       }
       .scroll-note {
@@ -527,6 +537,12 @@
       .card.pikniwa-card p {
         color: var(--ink);
       }
+      .captgrab-card {
+        background: #d3cffa;
+      }
+      .card.captgrab-card p {
+        color: var(--ink);
+      }
       footer {
         padding: 32px 0 24px;
         border-top: 1px solid var(--line);
@@ -591,7 +607,7 @@
         nav {
           height: 68px;
         }
-        .links a:nth-child(-n + 5) {
+        .links a:nth-child(-n + 6) {
           display: none;
         }
         .intro {
@@ -648,6 +664,7 @@
         <a href="#youtube">YOUTUBE</a>
         <a href="#evirest">EVIREST</a>
         <a href="#pikniwa">PIKNIWA</a>
+        <a href="#captgrab">CAPTGRAB</a>
         <a href="drink-diagnosis/index.html">SAKEMATCH</a>
         <a href="#links">LINKS</a>
       </div>
@@ -658,7 +675,7 @@
         <span class="hello">HELLO, THIS IS MY PAGE</span>
         <h1>つくったり、<span>発信したり。</span></h1>
         <p class="intro-copy">
-          conte0745のマイページです。サブスク管理アプリ「サブベア」や予定調整アプリ「YOTEI」、API検証のChrome拡張機能「EviREST」、ドット絵の島をつくる「ピクニワ」、YouTubeチャンネル「インシデントラボ」を運営しています。
+          conte0745のマイページです。サブスク管理アプリ「サブベア」や予定調整アプリ「YOTEI」、API検証のChrome拡張機能「EviREST」、ページ全体を撮影するChrome拡張機能「CaptGrab」、ドット絵の島をつくる「ピクニワ」、YouTubeチャンネル「インシデントラボ」を運営しています。
         </p>
       </div>
       <aside class="profile-card">
@@ -712,7 +729,9 @@
           <div
             style="margin-top: 24px; display: flex; gap: 10px; flex-wrap: wrap"
           >
-            <a class="button" href="subbear/index.html">紹介を見る <span>→</span></a>
+            <a class="button" href="subbear/index.html"
+              >紹介を見る <span>→</span></a
+            >
             <a
               class="button button-sub"
               href="https://subbare.shiftonton.net/lp"
@@ -837,7 +856,8 @@
           </div>
           <br />
           <p>
-            HTTP/REST APIの送信・検証と、テストエビデンスの出力ができるChrome拡張機能です。
+            HTTP/REST
+            APIの送信・検証と、テストエビデンスの出力ができるChrome拡張機能です。
           </p>
           <ul class="feature-list">
             <li>アサーション結果からOK / NGを自動判定</li>
@@ -907,6 +927,62 @@
           </a>
         </div>
       </section>
+
+      <!-- CAPTGRAB CARD -->
+      <section class="card subbear-card captgrab-card" id="captgrab">
+        <div class="card-content">
+          <span class="kind">07 / CHROME EXTENSION</span>
+          <div class="subbear-heading">
+            <h2>CaptGrab</h2>
+            <div class="tech-stack" aria-label="使用技術">
+              <span class="badge-typescript">TypeScript</span>
+              <span class="badge-chrome">Chrome拡張</span>
+            </div>
+          </div>
+          <p>
+            画面サイズを固定して、Webページ全体を1枚のPNGにするChrome拡張機能です。
+          </p>
+          <p class="project-note">保存もコピーも、1クリックで。</p>
+          <ul class="feature-list">
+            <li>100vhの要素が伸びず、画像の継ぎ目も出ない</li>
+            <li>撮影サイズや保存先を設定で変更できる</li>
+            <li>アカウント登録なし、画像は外部に送信しない</li>
+          </ul>
+          <div
+            style="margin-top: 24px; display: flex; gap: 10px; flex-wrap: wrap"
+          >
+            <a
+              class="button"
+              href="https://chromewebstore.google.com/detail/lanhcfgmjnbbalhiljdhcleahpineilm"
+              target="_blank"
+              rel="noopener noreferrer"
+              >ストアで見る <span>↗</span></a
+            >
+            <a
+              class="button button-sub"
+              href="https://captgrab.shiftonton.net/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >紹介ページ <span>↗</span></a
+            >
+          </div>
+        </div>
+        <div class="subbear-shot-wrap">
+          <a
+            href="https://chromewebstore.google.com/detail/lanhcfgmjnbbalhiljdhcleahpineilm"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="CaptGrabをストアで見る"
+          >
+            <img
+              class="subbear-shot"
+              src="captgrab/captgrab-marquee.png"
+              alt="画面サイズを固定して、ページ全体を1枚に。CaptGrab"
+              loading="lazy"
+            />
+          </a>
+        </div>
+      </section>
     </main>
 
     <footer class="page" id="links">
@@ -937,6 +1013,12 @@
             target="_blank"
             rel="noopener noreferrer"
             >PIKNIWA ↗</a
+          >
+          <a
+            href="https://chromewebstore.google.com/detail/lanhcfgmjnbbalhiljdhcleahpineilm"
+            target="_blank"
+            rel="noopener noreferrer"
+            >CAPTGRAB ↗</a
           >
           <a
             href="https://x.com/cal301983"
