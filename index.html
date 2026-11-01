@@ -18,7 +18,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="conte0745のマイページ。サブスク管理アプリ「サブベア」や予定調整アプリ「YOTEI」、API検証のChrome拡張機能「EviREST」、ページ全体を撮影するChrome拡張機能「CaptGrab」、ドット絵の島をつくる「ピクニワ」、YouTubeチャンネル「インシデントラボ」を紹介します。"
+      content="conte0745のマイページ。予定調整アプリ「YOTEI」やAPI検証のChrome拡張機能「EviREST」など、つくったものを紹介します。"
     />
     <link rel="canonical" href="https://profile.shiftonton.net/" />
     <meta property="og:type" content="website" />
@@ -28,7 +28,7 @@
     <meta property="og:title" content="conte0745 — My Page" />
     <meta
       property="og:description"
-      content="conte0745のマイページ。サブスク管理アプリ「サブベア」や予定調整アプリ「YOTEI」、API検証のChrome拡張機能「EviREST」、ページ全体を撮影するChrome拡張機能「CaptGrab」、ドット絵の島をつくる「ピクニワ」、YouTubeチャンネル「インシデントラボ」を紹介します。"
+      content="conte0745のマイページ。予定調整アプリ「YOTEI」やAPI検証のChrome拡張機能「EviREST」など、つくったものを紹介します。"
     />
     <meta
       property="og:image"
@@ -46,6 +46,7 @@
     />
     <link rel="apple-touch-icon" href="profile-favicon.png?v=20261002" />
     <title>conte0745 — My Page</title>
+    <script src="components.js"></script>
     <style>
       :root {
         --bg: #f6f3eb;
@@ -98,9 +99,8 @@
       .links {
         display: flex;
         gap: 22px;
-        font-size: 10px;
-        font-weight: 800;
-        letter-spacing: 0.14em;
+        font-size: 13px;
+        font-weight: 700;
       }
       .links a:hover {
         color: var(--red);
@@ -111,23 +111,8 @@
         gap: 45px;
         padding: 76px 0 55px;
       }
-      .hello {
-        display: inline-flex;
-        align-items: center;
-        gap: 9px;
-        font-size: 11px;
-        font-weight: 800;
-        letter-spacing: 0.12em;
-      }
-      .hello::before {
-        content: "";
-        width: 9px;
-        height: 9px;
-        background: var(--red);
-        border-radius: 50%;
-      }
       h1 {
-        margin: 28px 0 25px;
+        margin: 0 0 25px;
         font-size: clamp(52px, 8vw, 98px);
         line-height: 0.92;
         letter-spacing: -0.075em;
@@ -149,7 +134,6 @@
         background: var(--ink);
         color: white;
         border-radius: 24px;
-        transform: rotate(2deg);
       }
       .profile-head {
         display: flex;
@@ -160,7 +144,7 @@
       .profile-icon {
         display: block;
         flex: 0 0 auto;
-        width: 86px;
+        width: 128px;
         aspect-ratio: 1;
         object-fit: cover;
         border: 3px solid var(--yellow);
@@ -186,65 +170,34 @@
         gap: 7px;
         flex-wrap: wrap;
       }
-      .profile-tech span {
-        padding: 7px 10px;
-        border-radius: 99px;
-        font-size: 10px;
-        font-weight: 900;
-        line-height: 1;
-      }
-      .badge-java {
-        background: #f89820;
-        color: #1b1b19;
-      }
-      .badge-spring {
-        background: #6db33f;
-        color: #14210c;
-      }
-      .badge-aws {
-        background: #232f3e;
-        color: #ff9900;
-        border: 1px solid #ff9900;
-      }
-      .badge-python {
-        background: #ffd343;
-        color: #1f4b73;
-      }
-      .badge-html {
-        background: #bf360c;
-        color: #fff;
-      }
-      .badge-css {
-        background: #1572b6;
-        color: #fff;
-      }
-      .badge-javascript {
-        background: #f7df1e;
-        color: #1b1b19;
-      }
-      .badge-chrome {
-        background: #1a73e8;
-        color: #fff;
-      }
-      .badge-svelte {
-        background: #ff3e00;
-        color: #fff;
-      }
-      .badge-typescript {
-        background: #3178c6;
-        color: #fff;
-      }
-      .scroll-note {
-        padding: 0 0 35px;
-        font-size: 9px;
-        font-weight: 800;
-        letter-spacing: 0.18em;
-      }
       .cards {
         display: grid;
         grid-template-columns: 1.2fr 0.8fr;
         gap: 20px;
         padding-bottom: 100px;
+      }
+      .section-title {
+        grid-column: 1 / -1;
+        display: flex;
+        align-items: baseline;
+        gap: 14px;
+        flex-wrap: wrap;
+        margin-top: 44px;
+        padding-bottom: 12px;
+        border-bottom: 2px solid var(--ink);
+      }
+      .section-title:first-child {
+        margin-top: 0;
+      }
+      .section-title h2 {
+        margin: 0;
+        font-size: clamp(22px, 3vw, 30px);
+        letter-spacing: -0.04em;
+      }
+      .section-title span {
+        color: var(--sub);
+        font-size: 12px;
+        font-weight: 800;
       }
       .card {
         position: relative;
@@ -256,23 +209,46 @@
       .card-content {
         padding: 34px;
       }
+      product-card:not(:defined) {
+        display: block;
+        padding: 34px;
+        background: var(--white);
+        border: 1px solid var(--line);
+        border-radius: 26px;
+      }
+      tech-badge:not(:defined) {
+        margin-right: 6px;
+        font-size: 11px;
+        font-weight: 700;
+      }
+      product-card[color] p {
+        color: var(--ink);
+      }
+      [slot="image"] {
+        display: block;
+      }
       .kind {
         font-size: 9px;
         font-weight: 900;
         letter-spacing: 0.18em;
       }
-      .card h2 {
+      .card h2,
+      product-card h2 {
         margin: 18px 0 12px;
         font-size: clamp(34px, 5vw, 64px);
         line-height: 0.95;
         letter-spacing: -0.06em;
       }
-      .card p {
+      .card p,
+      product-card p {
         max-width: 470px;
         margin: 0;
         color: var(--sub);
         font-size: 13px;
         line-height: 1.85;
+      }
+      product-card h2 {
+        margin: 0;
       }
       .button {
         display: inline-flex;
@@ -297,58 +273,31 @@
         border: 1px solid var(--ink);
         margin-left: 8px;
       }
+      [slot="actions"].button {
+        margin: 0;
+      }
       .button-sub:hover {
         background: var(--ink);
         color: white;
       }
-      .subbear-card {
+      .card-shot {
+        display: block;
+        width: 95%;
+        margin: 0 auto;
+        max-width: 440px;
+        border: 2px solid var(--ink);
+        border-radius: 18px;
+        box-shadow: 8px 8px 0 var(--ink);
+      }
+      .youtube-card {
         grid-column: 1 / -1;
         display: grid;
         grid-template-columns: 1.2fr 0.8fr;
         align-items: center;
-        background: var(--white);
-        border: 2px solid var(--ink);
-        box-shadow: 10px 10px 0 var(--ink);
-      }
-      .subbear-card .card-content {
-        padding: 42px;
-      }
-      .subbear-heading {
-        display: flex;
-        align-items: center;
-        gap: 14px;
-        flex-wrap: wrap;
-        margin: 18px 0 12px;
-      }
-      .subbear-card .subbear-heading h2 {
-        margin: 0;
-        font-size: clamp(36px, 5vw, 56px);
-      }
-      .subbear-shot-wrap {
-        padding: 30px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-      .subbear-shot {
-        display: block;
-        width: 95%;
-        max-width: 440px;
-        border: 2px solid var(--ink);
-        border-radius: 18px;
-        box-shadow: 12px 12px 0 var(--ink);
-        transform: rotate(1.5deg);
-        transition: transform 0.2s;
-      }
-      .subbear-shot:hover {
-        transform: rotate(0deg);
-      }
-      .youtube-card {
         background: var(--red);
         border-color: var(--red);
       }
-      .youtube-card .card-content,
-      .yotei-card .card-content {
+      .youtube-card .card-content {
         position: relative;
         z-index: 2;
         padding-bottom: 20px;
@@ -360,14 +309,13 @@
         position: relative;
         display: block;
         width: 80%;
-        margin: 0 auto -35px;
+        margin: 34px auto;
         aspect-ratio: 16/9;
         background: var(--ink);
         border: 2px solid var(--ink);
         border-radius: 16px;
         box-shadow: 14px 14px 0 var(--ink);
         overflow: hidden;
-        transform: rotate(-2deg);
       }
       .video-window img {
         display: block;
@@ -393,65 +341,11 @@
       .video-window:hover img {
         transform: scale(1.04);
       }
-      .yotei-card {
-        min-height: 650px;
-        background: var(--yellow);
-        border-color: var(--yellow);
-      }
-      .project-heading {
-        display: flex;
-        align-items: center;
-        gap: 16px;
-        flex-wrap: wrap;
-        margin: 18px 0 12px;
-      }
-      .card .project-heading h2 {
-        margin: 0;
-      }
-      .card .project-note {
+      product-card .project-note {
         margin-top: 10px;
         color: var(--ink);
         font-size: 11px;
         font-weight: 800;
-      }
-      .tech-stack {
-        display: flex;
-        gap: 9px;
-        flex-wrap: wrap;
-      }
-      .tech-stack span {
-        padding: 8px 12px;
-        border-radius: 99px;
-        font-size: 11px;
-        font-weight: 900;
-        line-height: 1;
-        letter-spacing: 0.03em;
-        box-shadow: 0 2px 0 rgba(27, 27, 25, 0.22);
-      }
-      .badge-next {
-        background: #111;
-        color: #fff;
-      }
-      .badge-react {
-        background: #17313b;
-        color: #61dafb;
-        border: 1px solid #61dafb;
-      }
-      .badge-cloudflare {
-        background: #f48120;
-        color: #1b1b19;
-      }
-      .badge-gcp {
-        background: #4285f4;
-        color: #1b1b19;
-      }
-      .badge-clerk {
-        background: #6c47ff;
-        color: #fff;
-      }
-      .badge-tailwind {
-        background: #0284c7;
-        color: #fff;
       }
       .feature-list {
         display: grid;
@@ -461,87 +355,24 @@
         list-style: none;
       }
       .feature-list li {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        font-size: 11px;
-        font-weight: 800;
+        font-size: 12px;
+        font-weight: 700;
       }
       .feature-list li::before {
-        content: "✓";
-        display: grid;
-        place-items: center;
-        width: 17px;
-        aspect-ratio: 1;
-        background: var(--ink);
-        color: var(--yellow);
-        border-radius: 50%;
-        font-size: 9px;
+        content: "・";
       }
-      .subbear-list li::before {
-        background: var(--orange);
-        color: white;
-      }
-      .yotei-shot {
-        display: block;
-        width: 78%;
-        margin: 0 auto -35px;
-        border: 2px solid var(--ink);
-        border-radius: 16px;
-        box-shadow: 12px 12px 0 var(--ink);
-        transform: rotate(2deg);
-      }
-      .diagnosis-card {
-        grid-column: auto;
-        display: grid;
-        grid-template-columns: 1fr;
-        align-content: space-between;
-        gap: 24px;
-        padding: 30px;
-        background: var(--blue);
-        border: 2px solid var(--ink);
-        box-shadow: 10px 10px 0 var(--ink);
-      }
-      .diagnosis-art {
+      .card-art {
         display: block;
         width: min(100%, 190px);
         height: auto;
         aspect-ratio: 1;
         object-fit: cover;
+        margin: 0 auto;
         border-radius: 50%;
-        justify-self: center;
       }
-      .diagnosis-card h2 {
-        margin: 15px 0 10px;
-        font-size: clamp(40px, 6vw, 64px);
-        line-height: 0.95;
-        letter-spacing: -0.06em;
-      }
-      .diagnosis-card p {
-        max-width: 510px;
-        color: var(--ink);
-      }
-      .diagnosis-card .button {
-        white-space: nowrap;
-      }
-      .evirest-card {
-        background: #5eead4;
-      }
-      .evirest-card .diagnosis-art {
+      .card-art-icon {
         width: min(100%, 128px);
         border-radius: 0;
-      }
-      .pikniwa-card {
-        background: #bfe8a8;
-      }
-      .card.pikniwa-card p {
-        color: var(--ink);
-      }
-      .captgrab-card {
-        background: #d3cffa;
-      }
-      .card.captgrab-card p {
-        color: var(--ink);
       }
       footer {
         padding: 32px 0 24px;
@@ -607,8 +438,9 @@
         nav {
           height: 68px;
         }
-        .links a:nth-child(-n + 6) {
-          display: none;
+        .links {
+          gap: 12px;
+          font-size: 12px;
         }
         .intro {
           grid-template-columns: 1fr;
@@ -621,25 +453,14 @@
         .cards {
           grid-template-columns: 1fr;
         }
-        .subbear-card {
+        .youtube-card {
           grid-template-columns: 1fr;
-        }
-        .subbear-shot-wrap {
-          padding: 0 24px 30px;
         }
         .video-window {
           width: 86%;
-          margin-bottom: -10px;
+          margin: 0 auto 34px;
         }
-        .yotei-card {
-          min-height: 650px;
-        }
-        .diagnosis-card {
-          grid-template-columns: 1fr;
-          gap: 18px;
-          padding: 26px;
-        }
-        .diagnosis-art {
+        .card-art {
           width: min(100%, 180px);
         }
         .footer-top {
@@ -659,23 +480,18 @@
     <nav class="page" aria-label="ページ内ナビゲーション">
       <a class="logo" href="#top">CONTE0745</a>
       <div class="links">
-        <a href="#subbear">SUBBEAR</a>
-        <a href="#yotei">YOTEI</a>
-        <a href="#youtube">YOUTUBE</a>
-        <a href="#evirest">EVIREST</a>
-        <a href="#pikniwa">PIKNIWA</a>
-        <a href="#captgrab">CAPTGRAB</a>
-        <a href="drink-diagnosis/index.html">SAKEMATCH</a>
-        <a href="#links">LINKS</a>
+        <a href="#apps">アプリ</a>
+        <a href="#extensions">Chrome拡張</a>
+        <a href="#video">動画</a>
+        <a href="#links">リンク</a>
       </div>
     </nav>
 
     <header class="intro page" id="top">
       <div>
-        <span class="hello">HELLO, THIS IS MY PAGE</span>
         <h1>つくったり、<span>発信したり。</span></h1>
         <p class="intro-copy">
-          conte0745のマイページです。サブスク管理アプリ「サブベア」や予定調整アプリ「YOTEI」、API検証のChrome拡張機能「EviREST」、ページ全体を撮影するChrome拡張機能「CaptGrab」、ドット絵の島をつくる「ピクニワ」、YouTubeチャンネル「インシデントラボ」を運営しています。
+          conte0745のマイページです。予定調整アプリ「YOTEI」やAPI検証のChrome拡張機能「EviREST」など、つくったものを紹介しています。
         </p>
       </div>
       <aside class="profile-card">
@@ -686,10 +502,10 @@
             alt="conte0745のカエルのアイコン"
           />
           <div class="profile-tech" aria-label="使用技術">
-            <span class="badge-java">Java</span>
-            <span class="badge-spring">Spring Boot</span>
-            <span class="badge-aws">AWS</span>
-            <span class="badge-python">Python</span>
+            <tech-badge size="small" tech="java">Java</tech-badge>
+            <tech-badge size="small" tech="spring">Spring Boot</tech-badge>
+            <tech-badge size="small" tech="aws">AWS</tech-badge>
+            <tech-badge size="small" tech="python">Python</tech-badge>
           </div>
         </div>
         <small>PROFILE</small>
@@ -699,127 +515,256 @@
         </p>
       </aside>
     </header>
-    <div class="scroll-note page">↓ SCROLL TO EXPLORE</div>
 
     <main class="cards page">
-      <!-- SUBBEAR CARD -->
-      <section class="card subbear-card" id="subbear">
-        <div class="card-content">
-          <span class="kind" style="color: var(--orange)">01 / NEW APP</span>
-          <div class="subbear-heading">
-            <h2>サブベア</h2>
-            <div class="tech-stack" aria-label="使用技術">
-              <span class="badge-next">Next.js</span>
-              <span class="badge-react">React</span>
-              <span class="badge-clerk">Clerk</span>
-              <span class="badge-tailwind">Tailwind</span>
-            </div>
-          </div>
-          <p>
-            毎月の固定費と支払日をまとめて管理できる、個人向けサブスクリプション管理アプリです。
-          </p>
-          <p class="project-note" style="color: var(--orange)">
-            固定費を、ひと目で。払いっぱなしを、そろそろ終わりに。
-          </p>
-          <ul class="feature-list subbear-list">
-            <li>月払い・年払いの総額を月額換算で可視化</li>
-            <li>更新日カウントダウンで支払い前に見直し</li>
-            <li>クレジットカード連携不要で安心・安全</li>
-          </ul>
-          <div
-            style="margin-top: 24px; display: flex; gap: 10px; flex-wrap: wrap"
-          >
-            <a class="button" href="subbear/index.html"
-              >紹介を見る <span>→</span></a
-            >
-            <a
-              class="button button-sub"
-              href="https://subbare.shiftonton.net/lp"
-              target="_blank"
-              rel="noopener noreferrer"
-              >公式LP <span>↗</span></a
-            >
-          </div>
-        </div>
-        <div class="subbear-shot-wrap">
-          <a href="subbear/index.html" aria-label="サブベアの紹介ページを見る">
+      <div class="section-title" id="apps">
+        <h2>Webアプリ</h2>
+      </div>
+
+      <!-- YOTEI CARD -->
+      <product-card id="yotei" color="yellow">
+        <span slot="kind" class="kind">WEB APP</span>
+        <h2 slot="title">YOTEI</h2>
+        <tech-badge slot="tech" tech="next">Next.js</tech-badge>
+        <tech-badge slot="tech" tech="react">React</tech-badge>
+        <tech-badge slot="tech" tech="cloudflare">Cloudflare</tech-badge>
+        <tech-badge slot="tech" tech="gcp">GCP</tech-badge>
+        <p>
+          日程を決める・出欠を取る・お店を決める・アンケートを取るなど様々な場面で活躍できる予定調整アプリです。
+        </p>
+        <p class="project-note">
+          LINEやDiscordでの手作業の集計に消耗して作りました。
+        </p>
+        <ul class="feature-list">
+          <li>ログイン不要で使える</li>
+          <li>リンクでかんたんに共有</li>
+          <li>△（未定）で答えられる</li>
+          <li>Discord/Slackと連携できる</li>
+        </ul>
+        <a slot="actions" class="button" href="yotei/index.html"
+          >紹介を見る <span>→</span></a
+        >
+        <a slot="actions"
+          class="button button-sub"
+          href="https://yotei.shiftonton.net/"
+          target="_blank"
+          rel="noopener noreferrer"
+          >YOTEIを開く <span>↗</span></a
+        >
+        <a slot="image"
+          href="yotei/index.html"
+          aria-label="YOTEIの紹介ページを見る"
+        >
+          <img
+            class="card-shot"
+            src="yotei/yotei-screen.png"
+            alt="YOTEIの実際のトップ画面"
+          />
+        </a>
+      </product-card>
+
+      <!-- PIKNIWA CARD -->
+      <product-card id="pikniwa" color="green">
+        <span slot="kind" class="kind">WEB APP</span>
+        <h2 slot="title">ピクニワ</h2>
+        <tech-badge slot="tech" tech="svelte">SvelteKit</tech-badge>
+        <tech-badge slot="tech" tech="cloudflare">Cloudflare</tech-badge>
+        <tech-badge slot="tech" tech="clerk">Clerk</tech-badge>
+        <p>
+          好きなことや、つくったものからドット絵の島を作り、ひとこと日記で育てるサービスです。
+        </p>
+        <p class="project-note">小さな島に、その人らしさを。</p>
+        <ul class="feature-list">
+          <li>ログインなしでも始められる</li>
+          <li>ひとこと日記で島を育てる</li>
+          <li>日記は公開・非公開を選べる</li>
+        </ul>
+        <a slot="actions" class="button" href="pikniwa/index.html"
+          >紹介を見る <span>→</span></a
+        >
+        <a slot="actions"
+          class="button button-sub"
+          href="https://pikniwa.shiftonton.net/"
+          target="_blank"
+          rel="noopener noreferrer"
+          >ピクニワを開く <span>↗</span></a
+        >
+        <a slot="image" href="pikniwa/index.html" aria-label="ピクニワの紹介ページを見る">
             <img
-              class="subbear-shot"
+              class="card-shot"
+              src="pikniwa/pikniwa-ogp.png"
+              alt="緑と小さな家のあるドット絵の島と、ピクニワの名前"
+              loading="lazy"
+            />
+          </a>
+      </product-card>
+
+      <!-- SUBBEAR CARD -->
+      <product-card id="subbear" outlined>
+        <span slot="kind" class="kind" style="color: var(--orange)">WEB APP</span>
+        <h2 slot="title">サブベア</h2>
+        <tech-badge slot="tech" tech="next">Next.js</tech-badge>
+        <tech-badge slot="tech" tech="react">React</tech-badge>
+        <tech-badge slot="tech" tech="clerk">Clerk</tech-badge>
+        <tech-badge slot="tech" tech="tailwind">Tailwind</tech-badge>
+        <p>
+          毎月の固定費と支払日をまとめて管理できる、個人向けサブスクリプション管理アプリです。
+        </p>
+        <p class="project-note" style="color: var(--orange)">
+          無料トライアルの解約を忘れて課金されたのがきっかけで作りました。
+        </p>
+        <ul class="feature-list">
+          <li>月払い・年払いの総額を月額換算で可視化</li>
+          <li>更新日カウントダウンで支払い前に見直し</li>
+          <li>カード連携なし、自分で登録して使う</li>
+        </ul>
+        <a slot="actions" class="button" href="subbear/index.html"
+          >紹介を見る <span>→</span></a
+        >
+        <a slot="actions"
+          class="button button-sub"
+          href="https://subbare.shiftonton.net/lp"
+          target="_blank"
+          rel="noopener noreferrer"
+          >サブベアを開く <span>↗</span></a
+        >
+        <a slot="image" href="subbear/index.html" aria-label="サブベアの紹介ページを見る">
+            <img
+              class="card-shot"
               src="subbear/subbear-thumbnail.png"
               alt="無駄なサブスク、削ぎ落とす。サブベア"
             />
           </a>
-        </div>
-      </section>
+      </product-card>
 
-      <!-- YOTEI CARD -->
-      <section class="card yotei-card" id="yotei">
-        <div class="card-content">
-          <span class="kind">02 / MY APP</span>
-          <div class="project-heading">
-            <h2>YOTEI</h2>
-            <div class="tech-stack" aria-label="使用技術">
-              <span class="badge-next">Next.js</span>
-              <span class="badge-react">React</span>
-              <span class="badge-cloudflare">Cloudflare</span>
-              <span class="badge-gcp">GCP</span>
-            </div>
-          </div>
-          <p>
-            日程を決める・出欠を取る・お店を決める・アンケートを取るなど様々な場面で活躍できる予定調整アプリです。
-          </p>
-          <p class="project-note">
-            予定調整をもっと手軽にしたくて開発しました。
-          </p>
-          <ul class="feature-list">
-            <li>ログイン不要で使える</li>
-            <li>リンクでかんたんに共有</li>
-            <li>Discord/Slackと連携できる</li>
-          </ul>
-          <a
-            class="button"
-            href="https://yotei.shiftonton.net/"
+      <product-card color="blue" outlined>
+        <span slot="kind" class="kind">WEB APP</span>
+        <h2 slot="title">一杯診断</h2>
+        <tech-badge slot="tech" tech="html">HTML</tech-badge>
+        <tech-badge slot="tech" tech="css">CSS</tech-badge>
+        <tech-badge slot="tech" tech="javascript">JavaScript</tech-badge>
+        <p>6つの質問から、あなたに合うお酒を診断します。</p>
+        <a slot="actions" class="button" href="drink-diagnosis/index.html"
+          >診断をはじめる <span>→</span></a
+        >
+        <a slot="image"
+          href="drink-diagnosis/index.html"
+          aria-label="一杯診断をはじめる"
+        >
+          <img
+            class="card-art"
+            src="drink-diagnosis/ippai-favicon.png"
+            alt="ビールとワインを描いた一杯診断のアイコン"
+            width="512"
+            height="512"
+            loading="lazy"
+          />
+        </a>
+      </product-card>
+
+      <div class="section-title" id="extensions">
+        <h2>Chrome拡張機能</h2>
+      </div>
+
+      <!-- CAPTGRAB CARD -->
+      <product-card id="captgrab" color="lavender">
+        <span slot="kind" class="kind">CHROME EXTENSION</span>
+        <h2 slot="title">CaptGrab</h2>
+        <tech-badge slot="tech" tech="typescript">TypeScript</tech-badge>
+        <tech-badge slot="tech" tech="vite">Vite</tech-badge>
+        <tech-badge slot="tech" tech="chrome">Chrome拡張</tech-badge>
+        <p>
+          画面サイズを固定して、Webページ全体を1枚のPNGにするChrome拡張機能です。
+        </p>
+        <p class="project-note">1クリックで保存とコピーまでできます。</p>
+        <ul class="feature-list">
+          <li>画面いっぱいの表示も崩れず、画像の継ぎ目も出ない</li>
+          <li>撮影サイズや保存先を設定で変更できる</li>
+          <li>アカウント登録なし、画像は外部に送信しない</li>
+        </ul>
+        <a slot="actions"
+          class="button"
+          href="https://captgrab.shiftonton.net/"
+          target="_blank"
+          rel="noopener noreferrer"
+          >紹介を見る <span>↗</span></a
+        >
+        <a slot="actions"
+          class="button button-sub"
+          href="https://chromewebstore.google.com/detail/lanhcfgmjnbbalhiljdhcleahpineilm"
+          target="_blank"
+          rel="noopener noreferrer"
+          >ストアで見る <span>↗</span></a
+        >
+        <a slot="image"
+            href="https://captgrab.shiftonton.net/"
             target="_blank"
             rel="noopener noreferrer"
-            >YOTEIを見る <span>↗</span></a
+            aria-label="CaptGrabの紹介ページを見る"
           >
-        </div>
-        <img
-          class="yotei-shot"
-          src="yotei/yotei-screen.jpg"
-          alt="YOTEIの実際のトップ画面"
-        />
-      </section>
+            <img
+              class="card-shot"
+              src="captgrab/captgrab-marquee.png"
+              alt="画面サイズを固定して、ページ全体を1枚に。CaptGrab"
+              loading="lazy"
+            />
+          </a>
+      </product-card>
 
-      <section class="card diagnosis-card">
-        <div>
-          <span class="kind">03 / MY APP</span>
-          <h2>一杯診断</h2>
-          <div class="tech-stack diagnosis-tech" aria-label="使用技術">
-            <span class="badge-html">HTML</span>
-            <span class="badge-css">CSS</span>
-            <span class="badge-javascript">JavaScript</span>
-          </div>
-          <br />
-          <p>6つの質問から、あなたに合うお酒を診断します。</p>
-          <a class="button" href="drink-diagnosis/index.html"
-            >診断をはじめる <span>→</span></a
-          >
-        </div>
-        <img
-          class="diagnosis-art"
-          src="drink-diagnosis/ippai-favicon.png"
-          alt="ビールとワインを描いた一杯診断のアイコン"
-          width="512"
-          height="512"
-          loading="lazy"
-        />
-      </section>
+      <!-- EVIREST CARD -->
+      <product-card id="evirest" color="mint" outlined>
+        <span slot="kind" class="kind">CHROME EXTENSION</span>
+        <h2 slot="title">EviREST</h2>
+        <tech-badge slot="tech" tech="javascript">JavaScript</tech-badge>
+        <tech-badge slot="tech" tech="chrome">Chrome拡張</tech-badge>
+        <p>
+          HTTP/REST
+          APIの送信・検証と、テストエビデンスの出力ができるChrome拡張機能です。
+        </p>
+        <ul class="feature-list">
+          <li>アサーション結果からOK / NGを自動判定</li>
+          <li>エビデンスをHTML・Excelで出力</li>
+          <li>アカウント登録なし、データはブラウザ内だけ</li>
+        </ul>
+        <a slot="actions"
+          class="button"
+          href="https://evirest.shiftonton.net/"
+          target="_blank"
+          rel="noopener noreferrer"
+          >紹介を見る <span>↗</span></a
+        >
+        <a slot="actions"
+          class="button button-sub"
+          href="https://chromewebstore.google.com/detail/evirest-api-tester/edocmaemplpnhjpfnoenibkoopfndgaa"
+          target="_blank"
+          rel="noopener noreferrer"
+          >ストアで見る <span>↗</span></a
+        >
+        <a slot="image"
+          href="https://evirest.shiftonton.net/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="EviRESTの紹介ページを見る"
+        >
+          <img
+            class="card-art card-art-icon"
+            src="evirest/evirest-icon.png"
+            alt="波括弧とチェックマークを描いたEviRESTのアイコン"
+            width="128"
+            height="128"
+            loading="lazy"
+          />
+        </a>
+      </product-card>
+
+      <div class="section-title" id="video">
+        <h2>動画</h2>
+      </div>
 
       <!-- INCIDENT LAB CARD -->
       <section class="card youtube-card" id="youtube">
         <div class="card-content">
-          <span class="kind">04 / INCIDENT LAB</span>
+          <span class="kind">INCIDENT LAB</span>
           <h2>インシデント<br />ラボ</h2>
           <p>大規模障害事例を、YouTube動画でわかりやすく紹介しています。</p>
           <a
@@ -828,14 +773,14 @@
             target="_blank"
             rel="noopener noreferrer"
             >チャンネルを見る <span>↗</span></a
-          >
+        >
         </div>
         <a
           class="video-window"
-          href="https://youtube.com/shorts/i91rauPJrXE"
+          href="https://www.youtube.com/@%E3%82%A4%E3%83%B3%E3%82%B7%E3%83%87%E3%83%B3%E3%83%88%E3%83%A9%E3%83%9C"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Cloudflare障害を60秒解説のShortsを見る"
+          aria-label="インシデントラボのチャンネルを見る"
         >
           <img
             src="incident-lab/youtube-thumbnail.png"
@@ -844,206 +789,36 @@
           />
         </a>
       </section>
-
-      <!-- EVIREST CARD -->
-      <section class="card diagnosis-card evirest-card" id="evirest">
-        <div>
-          <span class="kind">05 / CHROME EXTENSION</span>
-          <h2>EviREST</h2>
-          <div class="tech-stack" aria-label="使用技術">
-            <span class="badge-javascript">JavaScript</span>
-            <span class="badge-chrome">Chrome拡張</span>
-          </div>
-          <br />
-          <p>
-            HTTP/REST
-            APIの送信・検証と、テストエビデンスの出力ができるChrome拡張機能です。
-          </p>
-          <ul class="feature-list">
-            <li>アサーション結果からOK / NGを自動判定</li>
-            <li>エビデンスをHTML・Excelで出力</li>
-            <li>アカウント登録なし、データはブラウザ内だけ</li>
-          </ul>
-          <a
-            class="button"
-            href="https://chromewebstore.google.com/detail/evirest-api-tester/edocmaemplpnhjpfnoenibkoopfndgaa"
-            target="_blank"
-            rel="noopener noreferrer"
-            >ストアで見る <span>↗</span></a
-          >
-        </div>
-        <img
-          class="diagnosis-art"
-          src="evirest/evirest-icon.png"
-          alt="波括弧とチェックマークを描いたEviRESTのアイコン"
-          width="128"
-          height="128"
-          loading="lazy"
-        />
-      </section>
-
-      <!-- PIKNIWA CARD -->
-      <section class="card subbear-card pikniwa-card" id="pikniwa">
-        <div class="card-content">
-          <span class="kind">06 / MY APP</span>
-          <div class="subbear-heading">
-            <h2>ピクニワ</h2>
-            <div class="tech-stack" aria-label="使用技術">
-              <span class="badge-svelte">SvelteKit</span>
-              <span class="badge-cloudflare">Cloudflare</span>
-              <span class="badge-clerk">Clerk</span>
-            </div>
-          </div>
-          <p>
-            好きなことや、つくったものからドット絵の島を作り、ひとこと日記で育てるサービスです。
-          </p>
-          <p class="project-note">小さな島に、その人らしさを。</p>
-          <ul class="feature-list">
-            <li>ログインなしでも始められる</li>
-            <li>ひとこと日記で島を育てる</li>
-            <li>日記は公開・非公開を選べる</li>
-          </ul>
-          <a
-            class="button"
-            href="https://pikniwa.shiftonton.net/"
-            target="_blank"
-            rel="noopener noreferrer"
-            >ピクニワを見る <span>↗</span></a
-          >
-        </div>
-        <div class="subbear-shot-wrap">
-          <a
-            href="https://pikniwa.shiftonton.net/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="ピクニワを見る"
-          >
-            <img
-              class="subbear-shot"
-              src="pikniwa/pikniwa-ogp.png"
-              alt="緑と小さな家のあるドット絵の島と、ピクニワの名前"
-              loading="lazy"
-            />
-          </a>
-        </div>
-      </section>
-
-      <!-- CAPTGRAB CARD -->
-      <section class="card subbear-card captgrab-card" id="captgrab">
-        <div class="card-content">
-          <span class="kind">07 / CHROME EXTENSION</span>
-          <div class="subbear-heading">
-            <h2>CaptGrab</h2>
-            <div class="tech-stack" aria-label="使用技術">
-              <span class="badge-typescript">TypeScript</span>
-              <span class="badge-chrome">Chrome拡張</span>
-            </div>
-          </div>
-          <p>
-            画面サイズを固定して、Webページ全体を1枚のPNGにするChrome拡張機能です。
-          </p>
-          <p class="project-note">保存もコピーも、1クリックで。</p>
-          <ul class="feature-list">
-            <li>100vhの要素が伸びず、画像の継ぎ目も出ない</li>
-            <li>撮影サイズや保存先を設定で変更できる</li>
-            <li>アカウント登録なし、画像は外部に送信しない</li>
-          </ul>
-          <div
-            style="margin-top: 24px; display: flex; gap: 10px; flex-wrap: wrap"
-          >
-            <a
-              class="button"
-              href="https://chromewebstore.google.com/detail/lanhcfgmjnbbalhiljdhcleahpineilm"
-              target="_blank"
-              rel="noopener noreferrer"
-              >ストアで見る <span>↗</span></a
-            >
-            <a
-              class="button button-sub"
-              href="https://captgrab.shiftonton.net/"
-              target="_blank"
-              rel="noopener noreferrer"
-              >紹介ページ <span>↗</span></a
-            >
-          </div>
-        </div>
-        <div class="subbear-shot-wrap">
-          <a
-            href="https://chromewebstore.google.com/detail/lanhcfgmjnbbalhiljdhcleahpineilm"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="CaptGrabをストアで見る"
-          >
-            <img
-              class="subbear-shot"
-              src="captgrab/captgrab-marquee.png"
-              alt="画面サイズを固定して、ページ全体を1枚に。CaptGrab"
-              loading="lazy"
-            />
-          </a>
-        </div>
-      </section>
     </main>
 
     <footer class="page" id="links">
       <div class="footer-top">
-        <p>ほかにも、いろいろ。</p>
+        <p>記事やコードはこちら</p>
         <div class="socials">
-          <a href="subbear/index.html">SUBBEAR ↗</a>
-          <a
-            href="https://shiftonton.net/"
-            target="_blank"
-            rel="noopener noreferrer"
-            >YOTEI ↗</a
-          >
-          <a
-            href="https://www.youtube.com/@%E3%82%A4%E3%83%B3%E3%82%B7%E3%83%87%E3%83%B3%E3%83%88%E3%83%A9%E3%83%9C"
-            target="_blank"
-            rel="noopener noreferrer"
-            >YOUTUBE ↗</a
-          >
-          <a
-            href="https://chromewebstore.google.com/detail/evirest-api-tester/edocmaemplpnhjpfnoenibkoopfndgaa"
-            target="_blank"
-            rel="noopener noreferrer"
-            >EVIREST ↗</a
-          >
-          <a
-            href="https://pikniwa.shiftonton.net/"
-            target="_blank"
-            rel="noopener noreferrer"
-            >PIKNIWA ↗</a
-          >
-          <a
-            href="https://chromewebstore.google.com/detail/lanhcfgmjnbbalhiljdhcleahpineilm"
-            target="_blank"
-            rel="noopener noreferrer"
-            >CAPTGRAB ↗</a
-          >
           <a
             href="https://x.com/cal301983"
             target="_blank"
             rel="noopener noreferrer"
             >X / TWITTER ↗</a
-          >
+        >
           <a
             href="https://qiita.com/conte0745"
             target="_blank"
             rel="noopener noreferrer"
             >QIITA ↗</a
-          >
+        >
           <a
             href="https://zenn.dev/conte0745"
             target="_blank"
             rel="noopener noreferrer"
             >ZENN ↗</a
-          >
+        >
           <a
             href="https://github.com/conte0745"
             target="_blank"
             rel="noopener noreferrer"
             >GITHUB ↗</a
-          >
+        >
         </div>
       </div>
       <div class="copyright">

@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-Y1E1E2FNE5"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-Y1E1E2FNE5");
+    </script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="YOTEIの紹介ページ。予定調整のやり取りに消耗して作った、登録なしで使える日程調整と投票のアプリです。" />
+    <link rel="canonical" href="https://profile.shiftonton.net/yotei/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="conte0745" />
+    <meta property="og:locale" content="ja_JP" />
+    <meta property="og:url" content="https://profile.shiftonton.net/yotei/" />
+    <meta property="og:title" content="YOTEI — みんなで決めるを、ひとつのリンクで。" />
+    <meta property="og:description" content="YOTEIの紹介ページ。予定調整のやり取りに消耗して作った、登録なしで使える日程調整と投票のアプリです。" />
+    <meta property="og:image" content="https://profile.shiftonton.net/yotei/yotei-og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="YOTEI" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" type="image/png" href="yotei-icon.png" />
+    <link rel="apple-touch-icon" href="yotei-icon.png" />
+    <title>YOTEI — みんなで決めるを、ひとつのリンクで。</title>
+    <link rel="stylesheet" href="../intro.css" />
+    <style>
+      :root {
+        --accent: #2563eb;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="page" aria-label="ページ内ナビゲーション">
+      <span class="brand"><img src="yotei-icon.png" alt="" />YOTEI</span>
+      <a href="../index.html">← conte0745のページへ</a>
+    </nav>
+    <main class="page">
+      <h1>みんなで決めるを、<br />ひとつのリンクで。</h1>
+      <p class="lead">
+        日程調整と出欠確認、お店決めの投票、アンケートをまとめて扱える予定調整アプリです。候補を作ってリンクを送ると、登録なしで答えてもらえます。
+      </p>
+      <div class="actions">
+        <a class="btn" href="https://yotei.shiftonton.net/events/create?from=home" target="_blank" rel="noopener noreferrer">無料で作成する ↗</a>
+        <a class="btn sub" href="https://yotei.shiftonton.net/help" target="_blank" rel="noopener noreferrer">使い方 ↗</a>
+      </div>
+      <figure>
+        <img src="yotei-screen.png" alt="YOTEIのトップ画面" />
+      </figure>
+
+      <section>
+        <h2>作った理由</h2>
+        <p>
+          「飲み会いつにする？」「会議できる日ある？」。候補日を並べて、返信を待って、集計して、「やっぱこの日は無理」が出て、また集計する。予定調整はどのコミュニティでも必ず発生するのに、これを繰り返すのはかなり消耗します。
+        </p>
+        <p>
+          LINEやDiscordでやると、メッセージは流れるし、集計は手作業です。既存の調整サービスも使っていましたが、一番気になっていたのは決まったあとでした。
+        </p>
+        <blockquote>決まったあと、結局またGoogleカレンダーに入れる。</blockquote>
+        <p>なので、候補を集めるだけでなく、決まったらすぐ動けるところまでを作ることにしました。</p>
+      </section>
+
+      <section>
+        <h2>こだわったところ</h2>
+        <h3>ログインなしで使えること</h3>
+        <p>
+          最初から絶対条件でした。一度しか参加しない人も多いので、そのたびに登録を求めると離脱してしまいます。リンクを開けばそのまま回答でき、あとから直せて、他人には編集されない。そのためにゲストIDと編集キーの仕組みを設計しました。
+        </p>
+        <h3>△があること</h3>
+        <p>
+          「行けるかも」「仕事次第」「時間による」は実際によくあります。○と✕だけだと主催者が判断しづらいので、△を入れています。人間の予定はそんなに綺麗に決まらない、という前提です。
+        </p>
+        <h3>日程も投票も同じ画面で扱えること</h3>
+        <p>「いつにする？」「どこにする？」「何食べる？」は、たいていセットで出てくるからです。</p>
+        <h3>決めたあとも同じリンクで済むこと</h3>
+        <p>
+          主催者が候補を確定すると、参加者は回答したときと同じリンクで結果を確認できます。Googleカレンダーへの追加やDiscord通知でも、確定した候補がそのまま使われます。
+        </p>
+      </section>
+
+      <section>
+        <h2>これから</h2>
+        <p>
+          日程調整のツールというより、人が何かを決めるためのUIとして育てていきたいと思っています。
+        </p>
+        <p>
+          くわしくは記事にも書きました。<a class="inline-link" href="https://qiita.com/conte0745/items/aa46a34d127f56b81e58" target="_blank" rel="noopener noreferrer">YOTEIを公開したときの話</a>、<a class="inline-link" href="https://qiita.com/conte0745/items/a5fc7149a943d40b82f0" target="_blank" rel="noopener noreferrer">予定の確定機能を実装した話</a>
+        </p>
+        <p class="stack">
+          Next.js / React / TypeScript / Tailwind CSS / Firebase Authentication / PostgreSQL / Prisma / Cloudflare / Google Cloud Run
+        </p>
+      </section>
+    </main>
+    <footer class="page">
+      <a class="author" href="../index.html">
+        <img src="../profile-favicon.png" alt="conte0745のカエルのアイコン" />
+        作った人: conte0745
+      </a>
+      <small><a href="../privacy.html">プライバシーポリシー</a></small>
+    </footer>
+  </body>
+</html>
