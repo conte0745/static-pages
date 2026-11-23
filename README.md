@@ -15,6 +15,7 @@ Cloudflare を利用してホスティングされています。
 | `subbear/`                                   | サブスク管理アプリ「サブベア（Subbear）」の紹介ページと画像         |
 | `privacy.html`                               | プライバシーポリシーページ（Google Analytics 利用に関する規約）     |
 | `drink-diagnosis/`                           | 20歳以上向けのお酒の好み診断「一杯診断」のページ・CSS・JS・画像     |
+| `defense-line/`                              | セキュリティ判断ゲーム「DEFENSE LINE」のページと画像                |
 | `yotei/` / `pikniwa/`                        | YOTEI・ピクニワの紹介ページと画像                                   |
 | `components.js`                              | トップページのWeb Components（`product-card`、`tech-badge`）         |
 | `intro.css`                                  | サブベア・YOTEI・ピクニワの紹介ページ共通のスタイル                 |
@@ -63,7 +64,14 @@ Cloudflare を利用してホスティングされています。
   - 20歳未満向けの入場制限と飲酒に関する注意を掲載
 - **ページ**: [一杯診断](drink-diagnosis/index.html)
 
-### 5. CaptGrab
+### 5. DEFENSE LINE
+- **概要**: セキュリティ担当者になって、海外からの不正アクセスに4択で対応するシミュレーションゲーム。
+- **特徴**:
+  - 全7ステージ、間違えるとそのステージからやり直し
+  - 選択ごとに結果と解説を表示
+- **ページ**: [DEFENSE LINE](defense-line/index.html)
+
+### 6. CaptGrab
 - **概要**: 画面サイズを固定して、Webページ全体を1枚のPNGにするChrome拡張機能。
 - **特徴**:
   - 画面いっぱいの表示も崩れず、画像の継ぎ目も出ない
@@ -72,7 +80,7 @@ Cloudflare を利用してホスティングされています。
 - **技術スタック**: TypeScript, Vite, Chrome拡張機能 (Manifest V3)
 - **リンク**: [Chrome ウェブストア](https://chromewebstore.google.com/detail/lanhcfgmjnbbalhiljdhcleahpineilm) / [紹介ページ](https://captgrab.shiftonton.net/) / [GitHub](https://github.com/conte0745/Capt-Glab)
 
-### 6. EviREST
+### 7. EviREST
 - **概要**: HTTP/REST APIの送信・検証と、テストエビデンスの出力ができるChrome拡張機能。
 - **特徴**:
   - アサーション結果からOK / NGを自動判定
@@ -81,11 +89,11 @@ Cloudflare を利用してホスティングされています。
 - **技術スタック**: JavaScript, Chrome拡張機能 (Manifest V3)
 - **リンク**: [Chrome ウェブストア](https://chromewebstore.google.com/detail/evirest-api-tester/edocmaemplpnhjpfnoenibkoopfndgaa) / [紹介ページ](https://evirest.shiftonton.net/) / [GitHub](https://github.com/conte0745/evirest)
 
-### 7. インシデントラボ (Incident Lab)
+### 8. インシデントラボ (Incident Lab)
 - **概要**: 過去の大規模なシステム障害やインシデント事例を分かりやすく解説するYouTubeチャンネル。
 - **リンク**: [YouTubeチャンネル](https://www.youtube.com/@%E3%82%A4%E3%83%B3%E3%82%B7%E3%83%87%E3%83%B3%E3%83%88%E3%83%A9%E3%83%9C)
 
-### 8. TikTok
+### 9. TikTok
 - **概要**: つくったアプリの紹介動画を投稿しているアカウント。
 - **リンク**: [TikTok](https://www.tiktok.com/@conte0745)
 

@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-Y1E1E2FNE5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+  gtag("js", new Date());
+  gtag("config", "G-Y1E1E2FNE5");
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="DEFENSE LINEは、海外からの不正アクセスに対応するセキュリティ担当者になって、4つの選択肢から最善の一手を選ぶシミュレーションゲームです。">
+<link rel="canonical" href="https://profile.shiftonton.net/defense-line/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="conte0745">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:url" content="https://profile.shiftonton.net/defense-line/">
+<meta property="og:title" content="DEFENSE LINE — 海外からの不正アクセスを防げ">
+<meta property="og:description" content="セキュリティ担当者になって、次々に起こるインシデントに4択で対応するシミュレーションゲームです。">
+<meta property="og:image" content="https://profile.shiftonton.net/defense-line/ogp-defense-line.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="DEFENSE LINE — 海外からの不正アクセスを防げ">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0b0f14">
+<link rel="icon" type="image/png" sizes="512x512" href="defense-line-icon.png?v=20261124">
+<link rel="apple-touch-icon" href="defense-line-icon.png?v=20261124">
+<title>DEFENSE LINE — 海外からの不正アクセスを防げ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0b0f14; --panel:#111821; --panel2:#16202b; --line:#233142;
+  --text:#d8e2ec; --muted:#7d8fa3; --accent:#3ddc97; --warn:#ffb347; --bad:#ff5d6c; --info:#5bb8ff;
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--text);font-family:"Noto Sans JP",system-ui,sans-serif;line-height:1.75}
+body{min-height:100vh;background:
+  radial-gradient(1200px 600px at 80% -10%, rgba(61,220,151,.08), transparent 60%),
+  radial-gradient(900px 500px at -10% 110%, rgba(91,184,255,.07), transparent 60%), var(--bg)}
+.wrap{max-width:820px;margin:0 auto;padding:28px 18px 60px}
+.mono{font-family:"JetBrains Mono",monospace}
+.site-nav{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px;font-family:"JetBrains Mono",monospace;font-size:12px;letter-spacing:.08em}
+.site-nav a{color:var(--muted);text-decoration:none}
+.site-nav a:hover{color:var(--text)}
+.site-nav .logo{font-weight:700;color:var(--text)}
+header.bar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:22px}
+.brand{font-family:"JetBrains Mono",monospace;font-weight:700;letter-spacing:.12em;color:var(--accent);font-size:14px}
+.brand span{color:var(--muted)}
+.progress{display:flex;gap:6px}
+.progress i{width:26px;height:6px;border-radius:3px;background:var(--line)}
+.progress i.done{background:var(--accent)}
+.progress i.now{background:var(--warn);box-shadow:0 0 10px rgba(255,179,71,.6)}
+.card{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:14px;padding:26px 24px;box-shadow:0 20px 60px rgba(0,0,0,.35)}
+.kicker{font-family:"JetBrains Mono",monospace;font-size:12px;color:var(--muted);letter-spacing:.1em;margin-bottom:6px}
+h1{font-size:34px;font-weight:900;margin:0 0 6px;line-height:1.3}
+h2{font-size:22px;font-weight:800;margin:0 0 14px;line-height:1.45}
+p{margin:0 0 12px}
+.lead{color:var(--muted)}
+.log{background:#070a0e;border:1px solid var(--line);border-radius:10px;padding:12px 14px;margin:14px 0 18px;font-family:"JetBrains Mono",monospace;font-size:12.5px;color:#9fb3c8;white-space:pre-wrap;overflow-x:auto;line-height:1.6}
+.log .r{color:var(--bad)} .log .y{color:var(--warn)} .log .g{color:var(--accent)}
+.choices{display:grid;gap:10px;margin-top:8px}
+.choice{display:flex;gap:12px;align-items:flex-start;text-align:left;width:100%;background:#0e151d;border:1px solid var(--line);color:var(--text);border-radius:10px;padding:14px 16px;font:inherit;cursor:pointer;transition:border-color .15s,transform .1s,background .15s}
+.choice:hover{border-color:var(--info);background:#111c27}
+.choice:active{transform:scale(.995)}
+.choice:focus-visible{outline:2px solid var(--info);outline-offset:2px}
+.choice .k{flex:none;width:28px;height:28px;border-radius:7px;display:grid;place-items:center;font-family:"JetBrains Mono",monospace;font-weight:700;background:var(--line);color:var(--accent);font-size:14px;margin-top:1px}
+.badge{display:inline-block;font-family:"JetBrains Mono",monospace;font-size:12px;font-weight:700;letter-spacing:.1em;padding:4px 10px;border-radius:999px;margin-bottom:12px}
+.badge.ok{background:rgba(61,220,151,.14);color:var(--accent);border:1px solid rgba(61,220,151,.4)}
+.badge.ng{background:rgba(255,93,108,.14);color:var(--bad);border:1px solid rgba(255,93,108,.4)}
+.picked{border-left:3px solid var(--line);padding:4px 0 4px 12px;color:var(--muted);margin-bottom:16px;font-size:14px}
+.outcome{font-size:16px;margin-bottom:16px}
+.why{background:rgba(91,184,255,.07);border:1px solid rgba(91,184,255,.25);border-radius:10px;padding:14px 16px;font-size:14px}
+.why b{color:var(--info)}
+.btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.btn{font:inherit;font-weight:700;border-radius:10px;padding:11px 20px;cursor:pointer;border:1px solid var(--accent);background:var(--accent);color:#04130c}
+.btn.ghost{background:transparent;color:var(--text);border-color:var(--line)}
+.btn:hover{filter:brightness(1.08)}
+.shake{animation:shake .45s}
+@keyframes shake{20%{transform:translateX(-6px)}40%{transform:translateX(6px)}60%{transform:translateX(-4px)}80%{transform:translateX(3px)}}
+.fade{animation:fade .35s ease}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:18px 0}
+.stat{background:#0e151d;border:1px solid var(--line);border-radius:10px;padding:12px;text-align:center}
+.stat b{display:block;font-family:"JetBrains Mono",monospace;font-size:26px;color:var(--accent)}
+.stat small{color:var(--muted);font-size:12px}
+ul.recap{padding-left:1.2em;margin:8px 0 0;font-size:14px}
+ul.recap li{margin-bottom:4px}
+.foot{color:var(--muted);font-size:12px;margin-top:22px;text-align:center}
+.foot a{color:var(--muted)}
+.foot a:hover{color:var(--text)}
+@media (max-width:560px){h1{font-size:26px}h2{font-size:19px}.card{padding:20px 16px}.progress i{width:16px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav class="site-nav" aria-label="サイト">
+    <a class="logo" href="../index.html">CONTE0745</a>
+    <a href="../index.html#apps">← プロダクト一覧へ</a>
+  </nav>
+  <header class="bar">
+    <div class="brand">DEFENSE<span>://</span>LINE</div>
+    <div class="progress" id="progress"></div>
+  </header>
+  <main id="app"></main>
+  <div class="foot">
+    <p>※ 登場する組織・IP・ログは架空です。解説は公的ガイドライン等の一般的な考え方に基づいています。</p>
+    <p><a href="../index.html">ホームへ戻る ↑</a></p>
+  </div>
+</div>
+
+<script>
+const STAGES = [
+  {
+    title: "深夜のログイン失敗急増",
+    situation: "あなたは会員制Webサービスのセキュリティ担当。深夜2時、監視アラートが鳴った。会員ログイン画面で、1時間に数万件のログイン失敗が発生している。送信元は複数の国にまたがる数千のIPで、1つのIPからの試行はわずか数回ずつ。試されているIDの多くは実在する会員のものだ。",
+    log: `<span class="y">[WARN]</span> login_failed  count=48,212/h  unique_src_ip=3,904
+<span class="y">[WARN]</span> top_countries: NL, US, VN, BR, RU ...
+<span class="y">[INFO]</span> attempts_per_ip: avg 12  /  valid_user_ratio: 71%
+<span class="r">[ALERT]</span> login_success from flagged ip: 3`,
+    choices: [
+      { text: "攻撃元IPをファイアウォールで1件ずつブロックしていく", correct: false,
+        outcome: "ブロックしても次々と新しいIPから試行が続き、作業が追いつかない。その間に攻撃は継続した。",
+        why: "数千IPに分散した攻撃は、ボットネットやプロキシを使った<b>リスト型攻撃（クレデンシャルスタッフィング）</b>の典型です。IP単位の手作業ブロックでは追いつきません。" },
+      { text: "レート制限・段階的なロック／CAPTCHAを有効化し、同時に「成功したログイン」がないかを調べる", correct: true,
+        outcome: "試行ペースが大きく落ちた。ログを調べると、攻撃元と同じIP群からのログイン成功が3件見つかった。",
+        why: "他サービスから流出したID・パスワードを使い回して試す<b>リスト型攻撃</b>では、「失敗」より「成功」が本当の被害です。速度を落とす対策と、侵害アカウントの特定を同時に進めるのが定石です。" },
+      { text: "パスワードは複雑さ要件を満たしているので様子を見る", correct: false,
+        outcome: "翌朝、複数の会員から「身に覚えのない操作がある」と問い合わせが殺到した。",
+        why: "リスト型攻撃は推測ではなく、<b>他サービスで流出した正しいパスワード</b>を使います。パスワードの複雑さは使い回しを防げません。" },
+      { text: "安全のため全会員アカウントを即時ロックする", correct: false,
+        outcome: "攻撃は止まったが、正規の会員も一切ログインできなくなり、サービスは事実上停止。問い合わせ窓口がパンクした。",
+        why: "全面ロックは自らサービス停止（DoS）を起こすのと同じです。対応は被害を最小化しつつ事業を継続できる範囲で行います。" }
+    ]
+  },
+  {
+    title: "侵害されたアカウント",
+    situation: "ログイン成功した3件のうち、1件はなんと社内スタッフの管理者アカウントだった。最終ログインは40分前、まだセッションは有効なままだ。",
+    log: `<span class="r">[ALERT]</span> admin_login  user=ops_tanaka  src=185.xx.xx.12 (NL)
+<span class="y">[INFO]</span>  session_status=ACTIVE  issued=02:14
+<span class="y">[INFO]</span>  actions: view_users, export_csv?, create_api_key?`,
+    choices: [
+      { text: "本人に「心当たりはありますか？」とメールし、返信を待つ", correct: false,
+        outcome: "本人は就寝中で返信は朝。その間、攻撃者は管理画面を自由に操作し続けた。",
+        why: "侵害の疑いが濃厚な管理者アカウントは、確認より先に<b>封じ込め</b>が必要です。確認は封じ込めと並行して行います。" },
+      { text: "パスワードだけを変更しておく", correct: false,
+        outcome: "パスワードは変わったが、攻撃者が持つ既存セッションはそのまま有効。操作は止まらなかった。",
+        why: "ログイン済みのセッションやトークンは、パスワード変更だけでは無効にならない実装が多くあります。<b>セッション・トークンの失効</b>までがセットです。" },
+      { text: "セッションとトークンを強制失効させ、アカウントを停止。操作ログを保全して何をされたか確認する", correct: true,
+        outcome: "攻撃者のアクセスを遮断できた。保全した操作ログから、攻撃者が新しいAPIキーを1つ発行していたことが判明した。",
+        why: "インシデント対応の基本は<b>封じ込め → 証拠保全 → 影響調査</b>。攻撃者が残した「次の入口」（APIキー、追加ユーザー等）を見つけて消すことが重要です。" },
+      { text: "汚染されたかもしれないので、ログごとサーバーを初期化して作り直す", correct: false,
+        outcome: "システムはきれいになったが、何が盗まれたのか誰にも分からなくなった。報告も再発防止策も立てられない。",
+        why: "ログは原因調査・被害範囲の特定・当局への報告に不可欠な<b>証拠</b>です。再構築は証拠保全の後に行います。" }
+    ]
+  },
+  {
+    title: "認証の強化",
+    situation: "発行されていたAPIキーも無効化した。経営陣から「二度と同じことが起きないよう、ログインの仕組みを強化せよ」と指示が出た。最も効果の高い施策はどれか？",
+    log: `<span class="g">[OK]</span>   api_key revoked: key_9f2c...
+<span class="y">[TODO]</span> 認証強化策の決定`,
+    choices: [
+      { text: "全員にパスワードを90日ごとに変更させる", correct: false,
+        outcome: "ユーザーは「Password1」「Password2」…と末尾の数字だけ変える運用に。数か月後、同様の手口で再び侵入された。",
+        why: "米NISTのガイドライン（SP 800-63B）は、<b>定期的なパスワード変更の強制を推奨していません</b>。予測しやすい変更を招くうえ、流出したパスワードの使い回しには効きません。" },
+      { text: "ログイン時に「秘密の質問」を追加する", correct: false,
+        outcome: "「母親の旧姓」はSNSから簡単に調べられ、攻撃者は質問も突破した。",
+        why: "秘密の質問はパスワードと同じ「知っていること」の追加にすぎず、多要素にはなりません。NISTも秘密の質問の利用をやめるよう求めています。" },
+      { text: "管理者から順に多要素認証（MFA）を必須化し、漏えい済みパスワードの使用も拒否する", correct: true,
+        outcome: "以後、正しいパスワードで試行されても2要素目で止まるようになった。管理画面への不正ログインはゼロに。",
+        why: "パスワードが漏れても突破されない仕組みが<b>多要素認証</b>です。特に権限の大きい管理者から優先して導入します。可能ならフィッシングに強い方式（パスキー等）が望ましいです。" },
+      { text: "パスワードを「大文字・小文字・数字・記号すべて必須」に変更する", correct: false,
+        outcome: "ユーザーは既存のパスワードに「!」を足すだけ。流出済みリストからの攻撃にはほぼ効果がなかった。",
+        why: "文字種の強制は覚えにくさを増すだけで、使い回しは防げません。NISTも文字種の組み合わせを強制すべきでないとしています。" }
+    ]
+  },
+  {
+    title: "海外IPを全部遮断すれば？",
+    situation: "会議で部長が言った。「攻撃は海外からだったんだろ？ 海外IPを全部遮断すれば解決じゃないか」。このサービスの会員は国内在住者のみ。あなたはどう提案する？",
+    log: `<span class="y">[INFO]</span> 会員の居住地: 日本国内 100%
+<span class="y">[INFO]</span> 海外出張中のスタッフ: 2名`,
+    choices: [
+      { text: "全面的に賛成。海外IPを遮断したので、レート制限やMFAは不要として外す", correct: false,
+        outcome: "翌週、国内のクラウドサーバーや国内プロキシを経由した同様の攻撃が始まった。防御は以前より手薄になっていた。",
+        why: "攻撃者はVPN・プロキシ・国内の踏み台を簡単に使えます。<b>国別IP遮断（ジオブロッキング）は抜け道のある補助策</b>であり、単独の対策にはなりません。" },
+      { text: "User-Agentが日本語ブラウザのアクセスだけを許可する", correct: false,
+        outcome: "攻撃ツールはUser-Agentを1行書き換えるだけで突破してきた。",
+        why: "User-Agentや言語設定は送信側で<b>自由に偽装できる</b>値で、アクセス制御の根拠になりません。" },
+      { text: "ジオブロッキングは攻撃ノイズを減らす補助策として導入しつつ、管理画面は許可IP・社内VPN経由のみに限定。MFAと監視は維持する", correct: true,
+        outcome: "海外からの機械的な試行が激減し、ログが見やすくなった。国内経由の不審なアクセスも監視とMFAで捕捉できている。",
+        why: "対策は一つに頼らず重ねる<b>多層防御</b>が原則です。管理画面のような重要な入口は、そもそもインターネットに広く公開しない設計が有効です。" },
+      { text: "遮断は意味がないので一切しない", correct: false,
+        outcome: "攻撃ノイズが大量に残り続け、本当に危険なアクセスがログに埋もれて見逃された。",
+        why: "ジオブロッキングは完璧ではありませんが、利用者が国内に限られるなら<b>攻撃面を減らす効果</b>はあります。「万能ではない＝無意味」ではありません。" }
+    ]
+  },
+  {
+    title: "ありえない移動",
+    situation: "海外出張中のスタッフのため、スタッフ用ポータルは海外アクセスを許可している。ある日、スタッフAが10:00に東京からログインし、その20分後に遠く離れた国から同じアカウントでログインがあった。",
+    log: `<span class="y">[INFO]</span>  10:00  user=staff_a  src=Tokyo, JP      mfa=ok
+<span class="r">[ALERT]</span> 10:20  user=staff_a  src=São Paulo, BR  mfa=push_approved`,
+    choices: [
+      { text: "MFAも通っているので正規のログインと判断する", correct: false,
+        outcome: "実は攻撃者がMFAの承認通知を連打し、Aさんがうっかり「承認」を押していた。社内ファイルが持ち出された。",
+        why: "承認通知を大量に送りつけて押させる<b>MFA疲労攻撃</b>が実際に発生しています。MFAを通過した＝安全、ではありません。" },
+      { text: "「物理的にありえない移動」として検知し、ブラジル側のセッションを停止。本人に電話等の別経路で確認する", correct: true,
+        outcome: "Aさんは「通知を押してしまったかも」と証言。セッション停止が早く、被害は出なかった。パスワードを再設定し、番号入力型のMFAに切り替えた。",
+        why: "短時間で移動不可能な距離からのログインを検知する<b>impossible travel検知</b>は、認証後の異常を捉える有効な手段です。本人確認は攻撃者が介在しにくい<b>別の連絡経路</b>で行います。" },
+      { text: "東京側のログインが怪しいので、東京側を遮断する", correct: false,
+        outcome: "本物のAさんが締め出され、攻撃者はブラジルから操作を続けた。",
+        why: "どちらが本物かは事前に断定できません。普段の利用パターン（Aさんは東京で勤務中）と照らし、異常な側を止めて別経路で確認します。" },
+      { text: "Aさんのアカウントを永久に削除する", correct: false,
+        outcome: "Aさんは業務ができなくなり、しかも調査に必要なアカウントの操作履歴まで消えてしまった。",
+        why: "必要なのは一時停止と調査です。削除は証拠や業務への影響が大きく、過剰な対応です。" }
+    ]
+  },
+  {
+    title: "VPN装置の緊急脆弱性",
+    situation: "社内VPN装置のメーカーから「認証前に任意のコードを実行される脆弱性」が公表された。すでに海外の攻撃グループによる悪用が確認されているという。あなたの会社もこの製品を使っている。",
+    log: `<span class="r">[ADVISORY]</span> CVSS 9.8  Pre-auth RCE  "Actively exploited"
+<span class="y">[INFO]</span>     自社VPN装置: 該当バージョン / 定期メンテ予定: 来月`,
+    choices: [
+      { text: "来月の定期メンテナンスでまとめて適用する", correct: false,
+        outcome: "2週間後、VPN装置経由で社内ネットワークに侵入され、ランサムウェアが展開された。",
+        why: "「悪用が確認済み」の脆弱性は、待つほど攻撃を受ける確率が上がります。<b>緊急パッチは計画外でも適用</b>するのが原則です。" },
+      { text: "すぐにパッチを当てる。それで完了とする", correct: false,
+        outcome: "パッチは当たったが、公表前にすでに仕込まれていたバックドアが残っていた。攻撃者は入り続けた。",
+        why: "悪用済みの脆弱性では、<b>パッチ適用前に侵入されている可能性</b>があります。過去にも、パッチ後もバックドアが残っていた事例が報告されています。" },
+      { text: "VPNのパスワードを全員変更させる", correct: false,
+        outcome: "認証前に攻撃できる脆弱性なので、パスワード変更は全く効果がなかった。",
+        why: "「認証前（Pre-auth）」の脆弱性は、パスワードに関係なく攻撃されます。脆弱性の性質を読み取ることが大切です。" },
+      { text: "即時にパッチ適用（できなければメーカーの緩和策や一時停止）し、メーカー提供の手順で侵害痕跡も調査する", correct: true,
+        outcome: "調査の結果、侵入の痕跡は見つからなかった。公表から24時間以内に対処を完了できた。",
+        why: "<b>修正 + 侵害有無の調査</b>がセットです。パッチがすぐ出ない場合は緩和策や一時的な公開停止で攻撃面を減らします。" }
+    ]
+  },
+  {
+    title: "漏えいのおそれと報告",
+    situation: "最初のステージで侵害された管理者アカウントで、会員情報のCSVがエクスポートされた形跡が見つかった。氏名・メールアドレスなど約800人分。不正アクセスによるものだ。全容の解明にはまだ数週間かかりそうだ。",
+    log: `<span class="r">[FOUND]</span> export_csv  rows=812  by=ops_tanaka (compromised)
+<span class="y">[INFO]</span>  原因・範囲の確定見込み: 数週間後`,
+    choices: [
+      { text: "漏えいが確定するまで、社外には何も言わない", correct: false,
+        outcome: "後日、報告の遅れが問題視され、会員と社会からの信頼を大きく失った。",
+        why: "個人情報保護法では、<b>漏えいの「おそれ」</b>の段階でも報告対象になり得ます。確定を待つ理由にはなりません。" },
+      { text: "原因も対策もすべて解明してから、まとめて報告する", correct: false,
+        outcome: "数週間後に報告したが、「速やかな報告」がなされていないと指摘を受けた。",
+        why: "報告は、発覚後に速やかに行う<b>速報</b>と、後日の<b>確報</b>の二段階です。全部分かってからでは遅すぎます。" },
+      { text: "800人程度なので報告対象ではない", correct: false,
+        outcome: "不正アクセスによる漏えいは人数に関係なく報告対象だった。法令違反を指摘された。",
+        why: "「1,000人超」は報告対象の要件の一つにすぎません。<b>不正の目的によるおそれ</b>がある漏えいは、1人でも報告対象です。" },
+      { text: "分かっている範囲で個人情報保護委員会へ速やかに速報し、本人通知の準備を進める。調査を続けて確報する", correct: true,
+        outcome: "速報を提出し、会員へ通知とパスワード再設定の案内を行った。誠実な対応が評価され、混乱は最小限に抑えられた。",
+        why: "個人情報保護委員会は、発覚したらまず速やかな報告を求めています。不正目的のおそれがある場合、確報は発覚日から<b>60日以内</b>。並行して<b>本人への通知</b>も必要です。警察やIPAへの相談も検討します。" }
+    ]
+  }
+];
+
+const app = document.getElementById('app');
+const prog = document.getElementById('progress');
+let stage = 0, misses = 0, attempts = 0, order = [];
+
+const esc = s => s.replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+function shuffle(n){const a=[...Array(n).keys()];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
+
+function renderProgress(){
+  prog.innerHTML = STAGES.map((_,i)=>`<i class="${i<stage?'done':i===stage?'now':''}"></i>`).join('');
+}
+
+function title(){
+  stage = 0; misses = 0; attempts = 0;
+  prog.innerHTML = STAGES.map(()=>'<i></i>').join('');
+  app.innerHTML = `
+  <div class="card fade">
+    <div class="kicker">SECURITY INCIDENT SIMULATION</div>
+    <h1>海外からの<br>不正アクセスを防げ</h1>
+    <p class="lead">あなたは会員制Webサービスのセキュリティ担当者。次々に起こる事態に、4つの選択肢から最善の一手を選んでください。</p>
+    <p class="lead">正しい判断なら次のステージへ。判断を誤ると防衛線は突破され、そのステージからやり直しです。全${STAGES.length}ステージ。</p>
+    <div class="btns"><button class="btn" id="start">ミッション開始</button></div>
+  </div>`;
+  document.getElementById('start').onclick = play;
+}
+
+function play(){
+  renderProgress();
+  const s = STAGES[stage];
+  order = shuffle(s.choices.length);
+  app.innerHTML = `
+  <div class="card fade">
+    <div class="kicker">STAGE ${stage+1} / ${STAGES.length}</div>
+    <h2>${s.title}</h2>
+    <p>${s.situation}</p>
+    <div class="log">${s.log}</div>
+    <div class="kicker">あなたの判断は？</div>
+    <div class="choices">
+      ${order.map((ci,i)=>`<button class="choice" data-c="${ci}"><span class="k">${'ABCD'[i]}</span><span>${esc(s.choices[ci].text)}</span></button>`).join('')}
+    </div>
+  </div>`;
+  app.querySelectorAll('.choice').forEach(b => b.onclick = () => answer(+b.dataset.c));
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function answer(ci){
+  attempts++;
+  const s = STAGES[stage], c = s.choices[ci];
+  if(!c.correct) misses++;
+  const last = stage === STAGES.length-1;
+  app.innerHTML = `
+  <div class="card fade ${c.correct?'':'shake'}">
+    <span class="badge ${c.correct?'ok':'ng'}">${c.correct?'DEFENDED — 防衛成功':'BREACHED — 防げませんでした'}</span>
+    <div class="picked">あなたの選択：${esc(c.text)}</div>
+    <h2>${c.correct?'結果':'何が起きたか'}</h2>
+    <p class="outcome">${c.outcome}</p>
+    <div class="why"><b>解説：</b>${c.why}</div>
+    <div class="btns">
+      ${c.correct
+        ? `<button class="btn" id="next">${last?'結果を見る':'次のステージへ'}</button>`
+        : `<button class="btn" id="retry">もう一度やってみる</button><button class="btn ghost" id="restart">最初から</button>`}
+    </div>
+  </div>`;
+  if(c.correct){
+    document.getElementById('next').onclick = () => { stage++; last ? clear() : play(); };
+  }else{
+    document.getElementById('retry').onclick = play;
+    document.getElementById('restart').onclick = title;
+  }
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function clear(){
+  prog.innerHTML = STAGES.map(()=>'<i class="done"></i>').join('');
+  const rank = misses===0?'S — 完璧な防衛':misses<=2?'A — 頼れる守り手':misses<=5?'B — 経験を積もう':'C — 伸びしろあり';
+  app.innerHTML = `
+  <div class="card fade">
+    <span class="badge ok">MISSION COMPLETE</span>
+    <h1>全ステージ防衛成功</h1>
+    <div class="stats">
+      <div class="stat"><b>${STAGES.length}</b><small>クリアしたステージ</small></div>
+      <div class="stat"><b>${misses}</b><small>突破された回数</small></div>
+      <div class="stat"><b>${rank.split(' ')[0]}</b><small>ランク</small></div>
+    </div>
+    <p>${rank.split('— ')[1]}。今回の要点：</p>
+    <ul class="recap">
+      <li>リスト型攻撃では「失敗」より「成功したログイン」を探す</li>
+      <li>侵害時は 封じ込め → 証拠保全 → 影響調査 の順。セッションの失効も忘れずに</li>
+      <li>パスワードの定期変更より、多要素認証と漏えい済みパスワードの拒否</li>
+      <li>海外IP遮断は抜け道のある補助策。多層防御で組み合わせる</li>
+      <li>MFA通過後も、ありえない移動などの異常検知で守る</li>
+      <li>悪用済み脆弱性は 即時修正 + 侵害痕跡の調査</li>
+      <li>漏えいの「おそれ」でも速やかに速報、本人通知も</li>
+    </ul>
+    <div class="btns"><button class="btn" id="again">もう一度プレイ</button></div>
+  </div>`;
+  document.getElementById('again').onclick = title;
+}
+
+title();
+</script>
+</body>
+</html>
