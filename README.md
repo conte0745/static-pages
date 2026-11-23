@@ -89,7 +89,7 @@ Cloudflare を利用してホスティングされています。
 - **リンク**: [Chrome ウェブストア](https://chromewebstore.google.com/detail/evirest-api-tester/edocmaemplpnhjpfnoenibkoopfndgaa) / [紹介ページ](https://evirest.shiftonton.net/) / [GitHub](https://github.com/conte0745/evirest)
 
 ### 8. インシデントラボ (Incident Lab)
-- **概要**: 過去の大規模なシステム障害やインシデント事例を分かりやすく解説するYouTubeチャンネル。
+- **概要**: 大規模障害事例や脆弱性情報を分かりやすく解説するYouTube・Instagramのチャンネル。
 - **リンク**: [YouTubeチャンネル](https://www.youtube.com/@%E3%82%A4%E3%83%B3%E3%82%B7%E3%83%87%E3%83%B3%E3%83%88%E3%83%A9%E3%83%9C) / [Instagram](https://www.instagram.com/incidentlab_6838/)
 
 ### 9. TikTok
