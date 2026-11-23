@@ -12,12 +12,14 @@ Cloudflare を利用してホスティングされています。
 | ファイル / ディレクトリ                      | 説明                                                                |
 | :------------------------------------------- | :------------------------------------------------------------------ |
 | `index.html`                                 | トップページ。自己紹介、プロダクト一覧、各種リンクを掲載            |
+| `games/`                                     | Webゲーム一覧ページ（一杯診断・DEFENSE LINE）                       |
+| `site.css`                                   | トップページとゲーム一覧ページ共通のスタイル                        |
 | `subbear/`                                   | サブスク管理アプリ「サブベア（Subbear）」の紹介ページと画像         |
 | `privacy.html`                               | プライバシーポリシーページ（Google Analytics 利用に関する規約）     |
 | `drink-diagnosis/`                           | 20歳以上向けのお酒の好み診断「一杯診断」のページ・CSS・JS・画像     |
 | `defense-line/`                              | セキュリティ判断ゲーム「DEFENSE LINE」のページと画像                |
 | `yotei/` / `pikniwa/`                        | YOTEI・ピクニワの紹介ページと画像                                   |
-| `components.js`                              | トップページのWeb Components（`product-card`、`tech-badge`）         |
+| `components.js`                              | トップ・ゲーム一覧のWeb Components（`product-card`、`tech-badge`） |
 | `intro.css`                                  | サブベア・YOTEI・ピクニワの紹介ページ共通のスタイル                 |
 | `evirest/` / `captgrab/` / `incident-lab/` / `tiktok/` | トップページに載せる各プロダクトの画像                              |
 | `subbear.html` / `drink-diagnosis.html`      | 旧URLから新しいフォルダへ転送するページ                             |
@@ -62,14 +64,14 @@ Cloudflare を利用してホスティングされています。
   - スライダーで甘さや苦味などの好みを入力
   - 診断結果におすすめと豆知識、参照元を表示
   - 20歳未満向けの入場制限と飲酒に関する注意を掲載
-- **ページ**: [一杯診断](drink-diagnosis/index.html)
+- **ページ**: [一杯診断](drink-diagnosis/index.html)（[ゲーム一覧](games/index.html)に掲載）
 
 ### 5. DEFENSE LINE
 - **概要**: セキュリティ担当者になって、海外からの不正アクセスに4択で対応するシミュレーションゲーム。
 - **特徴**:
   - 全7ステージ、間違えるとそのステージからやり直し
   - 選択ごとに結果と解説を表示
-- **ページ**: [DEFENSE LINE](defense-line/index.html)
+- **ページ**: [DEFENSE LINE](defense-line/index.html)（[ゲーム一覧](games/index.html)に掲載）
 
 ### 6. CaptGrab
 - **概要**: 画面サイズを固定して、Webページ全体を1枚のPNGにするChrome拡張機能。
