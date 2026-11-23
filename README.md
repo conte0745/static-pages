@@ -12,12 +12,12 @@ Cloudflare を利用してホスティングされています。
 | ファイル / ディレクトリ                      | 説明                                                                |
 | :------------------------------------------- | :------------------------------------------------------------------ |
 | `index.html`                                 | トップページ。自己紹介、プロダクト一覧、各種リンクを掲載            |
-| `games/`                                     | Webゲーム一覧ページ（一杯診断・DEFENSE LINE）                       |
+| `games/`                                     | Webゲーム一覧ページ（一杯診断・防げ！不正アクセス）                       |
 | `site.css`                                   | トップページとゲーム一覧ページ共通のスタイル                        |
 | `subbear/`                                   | サブスク管理アプリ「サブベア（Subbear）」の紹介ページと画像         |
 | `privacy.html`                               | プライバシーポリシーページ（Google Analytics 利用に関する規約）     |
 | `drink-diagnosis/`                           | 20歳以上向けのお酒の好み診断「一杯診断」のページ・CSS・JS・画像     |
-| `defense-line/`                              | セキュリティ判断ゲーム「DEFENSE LINE」のページと画像                |
+| `defense-line/`                              | セキュリティ判断ゲーム「防げ！不正アクセス」のページと画像                |
 | `yotei/` / `pikniwa/`                        | YOTEI・ピクニワの紹介ページと画像                                   |
 | `components.js`                              | トップ・ゲーム一覧のWeb Components（`product-card`、`tech-badge`） |
 | `intro.css`                                  | サブベア・YOTEI・ピクニワの紹介ページ共通のスタイル                 |
@@ -66,12 +66,9 @@ Cloudflare を利用してホスティングされています。
   - 20歳未満向けの入場制限と飲酒に関する注意を掲載
 - **ページ**: [一杯診断](drink-diagnosis/index.html)（[ゲーム一覧](games/index.html)に掲載）
 
-### 5. DEFENSE LINE
+### 5. 防げ！不正アクセス
 - **概要**: セキュリティ担当者になって、海外からの不正アクセスに4択で対応するシミュレーションゲーム。
-- **特徴**:
-  - 全7ステージ、間違えるとそのステージからやり直し
-  - 選択ごとに結果と解説を表示
-- **ページ**: [DEFENSE LINE](defense-line/index.html)（[ゲーム一覧](games/index.html)に掲載）
+- **ページ**: [防げ！不正アクセス](defense-line/index.html)（[ゲーム一覧](games/index.html)に掲載）
 
 ### 6. CaptGrab
 - **概要**: 画面サイズを固定して、Webページ全体を1枚のPNGにするChrome拡張機能。
@@ -93,7 +90,7 @@ Cloudflare を利用してホスティングされています。
 
 ### 8. インシデントラボ (Incident Lab)
 - **概要**: 過去の大規模なシステム障害やインシデント事例を分かりやすく解説するYouTubeチャンネル。
-- **リンク**: [YouTubeチャンネル](https://www.youtube.com/@%E3%82%A4%E3%83%B3%E3%82%B7%E3%83%87%E3%83%B3%E3%83%88%E3%83%A9%E3%83%9C)
+- **リンク**: [YouTubeチャンネル](https://www.youtube.com/@%E3%82%A4%E3%83%B3%E3%82%B7%E3%83%87%E3%83%B3%E3%83%88%E3%83%A9%E3%83%9C) / [Instagram](https://www.instagram.com/incidentlab_6838/)
 
 ### 9. TikTok
 - **概要**: つくったアプリの紹介動画を投稿しているアカウント。
